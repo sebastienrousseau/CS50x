@@ -13,6 +13,10 @@ sciences.
 
 ### Week 0 Scratch
 
+Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.
+
+For Week 0, I have created a game called "Die Hard with a Scratch" which is based on the Die Hard film series and based on the ubiquitous character of Hans Gruber. It is a single player game where the player controls the character of Hans Gruber and must avoid baseballs thrown by the character of Mrs. McClane. For more information, please see the [Game Design Document](Week%200/GameDesign.md).
+
 - [Learn more ›](Week%200/Readme.md)
 
 ### Week 1 C
