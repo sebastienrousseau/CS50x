@@ -61,5 +61,29 @@ to stop him from his machiavellian plans.
 A fictional Los Angeles environment is presented in the game with the famous
 Nakatomi Plaza tower.
 
+### Characters
+
+#### Hans Gruber
+
+Gruber is a cunning thief and criminal mastermind from Germany who holds the Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.
+
+![Hans Gruber](assets/HansGruber.svg)
+
+#### Holly Gennero (Holly McClane)
+
+Holly Gennero is a former police officer and the ex-wife of John McClane.
+
+![Holly McClane](assets/HollyMcClane.svg)
+
+### Unique Selling Points
+
+Humour: A true crowd pleasing game featuring a simple game play and classic cop movie characters. The game is a parody of the Die Hard film series and a perfect time for Christmas binge watching.
+
+### Gameplay summary
+
+The game is a single player game where the player controls the character of Hans Gruber and must avoid baseballs thrown by the character of Mrs. McClane.
+
+Just use the space bar to jump and avoid the baseballs.
+
 [1]: https://scratch.mit.edu/
 [2]: https://en.wikipedia.org/wiki/Super_Dodge_Ball
