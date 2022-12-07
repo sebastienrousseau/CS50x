@@ -1,4 +1,8 @@
-# Game Design
+# Die Hard with a Scratch
+
+![Die Hard with a Scratch](assets/DieHardWithAScracth.svg)
+
+## Game Design
 
 The following specifies a design for a quick game implemented in Scratch.
 It is based on the Die Hard film series and based on the ubiquitous character of
