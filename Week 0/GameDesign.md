@@ -2,6 +2,11 @@
 
 ![Die Hard with a Scratch](assets/DieHardWithAScracth.svg)
 
+- Play the game at [https://scratch.mit.edu/projects/773380385][3]
+- Project file
+  [Die Hard with a Scratch.sb3](./sb3/Die%20Hard%20with%20a%20Scratch.sb3) is
+  available under [GPL-3.0 license](../LICENSE).
+
 ## Game Design
 
 The following specifies a design for a quick game implemented in Scratch.
@@ -87,3 +92,4 @@ Just use the space bar to jump and avoid the baseballs.
 
 [1]: https://scratch.mit.edu/
 [2]: https://en.wikipedia.org/wiki/Super_Dodge_Ball
+[3]: https://scratch.mit.edu/projects/773380385
