@@ -1,27 +1,34 @@
-# CS50x
+![Harvard University](./Week%200/assets/Harvard-University-Logo.svg)
+
+# Harvard CS50x — 2022
+
+This repository contains my solutions to the Harvard CS50x course. The course
+is taught by [David J. Malan](https://github.com/dmalan) and is available on
+[edX](https://www.edx.org/course/cs50s-introduction-to-computer-science).
 
 ## Table of Contents
 
-- [CS50x](#cs50x)
-  - [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
   - [CS50’s Introduction to Computer Science](#cs50s-introduction-to-computer-science)
-  - [Course Syllabus](#course-syllabus)
-    - [Week 0 Scratch](#week-0-scratch)
-    - [Week 1 C](#week-1-c)
-    - [Week 2 Arrays](#week-2-arrays)
-    - [Week 3 Algorithms](#week-3-algorithms)
-    - [Week 4 Memory](#week-4-memory)
-    - [Week 5 Data Structures](#week-5-data-structures)
-    - [Week 6 Python](#week-6-python)
-    - [Week 7 SQL](#week-7-sql)
-    - [Week 8 HTML, CSS, JavaScript](#week-8-html-css-javascript)
-    - [Week 9 Flask](#week-9-flask)
-    - [Week 10 Emoji](#week-10-emoji)
-    - [Cybersecurity](#cybersecurity)
-    - [Seminars](#seminars)
-    - [Final Project](#final-project)
+- [Course Syllabus](#course-syllabus)
+  - [Week 0 Scratch](#week-0-scratch)
+  - [Week 1 C](#week-1-c)
+  - [Week 2 Arrays](#week-2-arrays)
+  - [Week 3 Algorithms](#week-3-algorithms)
+  - [Week 4 Memory](#week-4-memory)
+  - [Week 5 Data Structures](#week-5-data-structures)
+  - [Week 6 Python](#week-6-python)
+  - [Week 7 SQL](#week-7-sql)
+  - [Week 8 HTML, CSS, JavaScript](#week-8-html-css-javascript)
+  - [Week 9 Flask](#week-9-flask)
+  - [Week 10 Emoji](#week-10-emoji)
+  - [Cybersecurity](#cybersecurity)
+  - [Seminars](#seminars)
+  - [Final Project](#final-project)
 
-## CS50’s Introduction to Computer Science
+## Introduction
+
+### CS50’s Introduction to Computer Science
 
 This course teaches students how to think algorithmically and solve problems
 efficiently. Topics include abstraction, algorithms, data structures,
