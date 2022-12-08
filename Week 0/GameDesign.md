@@ -1,4 +1,21 @@
-# Die Hard with a Scratch
+# CS50x - Week 0 Scratch
+
+![Harvard University](assets/Harvard-University-Logo.svg)
+
+## Table of Contents
+
+- [Game Design](#game-design)
+  - [Die Hard with a Scratch](#die-hard-with-a-scratch)
+    - [Concept](#concept)
+    - [Demographic](#demographic)
+    - [Description](#description)
+    - [Characters](#characters)
+    - [Unique Selling Points](#unique-selling-points)
+    - [Gameplay summary](#gameplay-summary)
+
+## Game Design
+
+### Die Hard with a Scratch
 
 ![Die Hard with a Scratch](assets/DieHardWithAScracth.svg)
 
@@ -7,113 +24,81 @@
   [Die Hard with a Scratch.sb3](./sb3/Die%20Hard%20with%20a%20Scratch.sb3) is
   available under [GPL-3.0 license](../LICENSE).
 
-## Table of Contents
+The below specifies a design for a quick game implemented in Scratch.
 
-- [Die Hard with a Scratch](#die-hard-with-a-scratch)
-  - [Table of Contents](#table-of-contents)
-  - [Game Design](#game-design)
-  - [Game Design Document](#game-design-document)
-    - [High Concept](#high-concept)
-    - [Demographic](#demographic)
-    - [Overview](#overview)
-    - [Characters](#characters)
-      - [Hans Gruber](#hans-gruber)
-      - [Holly Gennero (Holly McClane)](#holly-gennero-holly-mcclane)
-    - [Unique Selling Points](#unique-selling-points)
-    - [Gameplay summary](#gameplay-summary)
+The game is inspired by the Die Hard film series and based on the ubiquitous
+character of Hans Gruber. It is a single player game where the player controls
+the character of Hans Gruber and must avoid projectiles thrown by the character
+of Mrs. McClane.
 
-## Game Design
-
-The following specifies a design for a quick game implemented in Scratch.
-It is based on the Die Hard film series and based on the ubiquitous character of
-Hans Gruber.
-
-It is a single player game where the player controls the character of Hans
-Gruber and must avoid baseballs thrown by the character of Mrs. McClane.
-
-The game is inspired by the classic game of "[Super Dodge Ball][2]". An action
-game that was released by Technos Japan in 1987. Players competed with powerful
-teams of the world, to become a Super Dodge Ball team of the world. In Japan,
-it was the second game with starring Technos Japan's video game character
-'Kunio-kun', following 'Nekketsu Koha Kunio-kun'
-(the Japanese version of 'Renegade').
+The game is a remembrance of the classic game of "[Super Dodge Ball][2]". An
+action game that was released by Technos Japan in 1987.
 
 [![Super Dodge Ball](./assets/SuperDodgeBall.svg)][2]
 
-## Game Design Document
+#### Concept
 
-### High Concept
+A single player game where you play as a Hans Gruber character, trying to dodge
+various objects thrown at you by a pretty upset Mrs. McClane.
 
-A single player game where you play as a Hans Gruber type character, trying to
-dodge various objects thrown at you by a pretty upset Mrs. McClane character.
+The game is a parody of the Die Hard film series and arrives at a perfect time
+for a Die Hard Christmas binge!
 
-The game is a parody of the Die Hard film series and a perfect time for a Die
-Hard Christmas binge watching. **Merry Christmas Everyone!**
+**Merry Christmas Everyone!**
 
-Just press the space bar to jump and avoid the projectiles. You can also use the
-left and right arrow keys to move left and right your character.
-
-### Demographic
+#### Demographic
 
 - Target Audience: Classic game fans and Die Hard film fans, any age
-- Game Style: Jump and Run
+- Game Style: Jump and Move
 - Platform: Scratch [(https://scratch.mit.edu/)][1]
 - Players: 1 (Single Player mode)
-- Controls: Keyboard
+- Controls: Keyboard (Space bar, left and right arrow keys)
 
-### Overview
+#### Description
 
 Die Hard's Hans Gruber is considered one of the greatest movie villains of all
-time.
-
-Hans Gruber used a lot of theatrics during his takeover of Nakatomi Plaza in
-Die Hard, initially leaving everyone at the Christmas party to assume he and his
-men were terrorists. It was a ruse they continued to use during their
+time. Hans Gruber used a lot of theatrics during his takeover of Nakatomi Plaza
+in Die Hard, initially leaving everyone at the Christmas party to assume he and
+his men were terrorists. It was a ruse they continued to use during their
 interactions with the police and the FBI to further their goals.
 
 However, Gruber wasn't above showcasing his intelligence by teasing his hostages
 with the revelation that he and his teams were simply high-stakes robbers
-looking for a big store.
-
-The game highlights Gruber's manipulations and the joy he took from playing with
-others' perceptions of his crimes.
+looking for a big store. The game highlights Gruber's manipulations and the joy
+he took from playing with others' perceptions of his crimes.
 
 This adrenaline-fuelled, arcade style game is predominately based on Holly
-Gennero, formerly Holly McClane, the ex-wife of John McClane.
+Gennero, formerly Holly McClane, the ex-wife of John McClane. She has made her
+mission to throw at Gruber any kind of object that she can find to stop him from
+his machiavellian plans.
 
-She has made her mission to throw at Gruber any kind of object that she can find
-to stop him from his machiavellian plans.
+A fictional Los Angeles environment is also presented in the game with the
+famous Nakatomi Plaza tower in distress.
 
-A fictional Los Angeles environment is presented in the game with the famous
-Nakatomi Plaza tower in distress.
+Sounds and special effects are provided by the game to combine usability with
+presence and immersion in the fictional game world of Die Hard and hopefully
+enhance playability of the game.
 
-### Characters
+#### Characters
 
-#### Hans Gruber
+A list of characters in the game.
 
-Gruber is a cunning thief and criminal mastermind from Germany who holds the
-Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.
+| Character | Name | Description |
+|---|---|---|
+| ![Hans Gruber](./assets/HansGruber.svg) | Hans Gruber  | A cunning thief and criminal mastermind from Germany who holds the Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.  |
+| ![Holly McClane](./assets/HollyMcClane.svg) | Holly Gennero (Holly McClane) | A former police officer and the ex-wife of John McClane. |
 
-![Hans Gruber](assets/HansGruber.svg)
+#### Unique Selling Points
 
-#### Holly Gennero (Holly McClane)
+- **Die Hard**: The world needs more Die Hard games, and this is one of them.
+- **Fun**: A true crowd pleasing game featuring a simple game play with classic
+  cop movie characters and a lot of jumps and throws.
+- **Simple**: A simple game that is easy to play and understand.
 
-Holly Gennero is a former police officer and the ex-wife of John McClane.
+#### Gameplay summary
 
-![Holly McClane](assets/HollyMcClane.svg)
-
-### Unique Selling Points
-
-Humour: A true crowd pleasing game featuring a simple game play and classic cop
-movie characters. The game is a parody of the Die Hard film series and a perfect
-time for Christmas binge watching.
-
-### Gameplay summary
-
-The game is a single player game where the player controls the character of Hans
-Gruber and must avoid baseballs thrown by the character of Mrs. McClane.
-
-Just use the space bar to jump and avoid the baseballs.
+Just press the space bar to jump and avoid the projectiles. You can also use the
+left and right arrow keys to move left and right your character.
 
 [1]: https://scratch.mit.edu/
 [2]: https://en.wikipedia.org/wiki/Super_Dodge_Ball

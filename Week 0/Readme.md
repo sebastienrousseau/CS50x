@@ -1,5 +1,7 @@
 # CS50x - Week 0 Scratch
 
+![Harvard University](assets/Harvard-University-Logo.svg)
+
 CS50’s Introduction to Computer Science. This is CS50, Harvard University's introduction to the intellectual enterprises of computer science and the art of programming.
 
 ## Table of Contents
@@ -19,11 +21,12 @@ CS50’s Introduction to Computer Science. This is CS50, Harvard University's in
 
 ## Lecture
 
-[Download Transcript Text (.txt) file](assets/transcript/lecture0-en.txt)
-
-or
+- [Download Transcript Text (.txt) file](assets/transcript/lecture0-en.txt or
+- Watch the video:
 
 [![Watch the video](https://img.youtube.com/vi/1tnj3UCkuxU/0.jpg)](https://youtu.be/1tnj3UCkuxU)
+
+### Video table of contents
 
 - 00:00:00 - Intro
 - 00:01:17 - Problem Solving
@@ -179,4 +182,4 @@ the Problem Set 0.
 [10]: https://scratch.mit.edu/projects/editor/?tutorial=all
 [11]: https://scratch.mit.edu/starter-projects
 [12]: https://www.google.com/chrome/
-[13]: https://github.com/sebastienrousseau/CS50x/blob/main/Week%200/GameDesign.md
+[13]: GameDesign.md

@@ -1,15 +1,11 @@
+# Harvard CS50x — 2023
+
 ![Harvard University](./Week%200/assets/Harvard-University-Logo.svg)
-
-# Harvard CS50x — 2022
-
-This repository contains my solutions to the Harvard CS50x course. The course
-is taught by [David J. Malan](https://github.com/dmalan) and is available on
-[edX](https://www.edx.org/course/cs50s-introduction-to-computer-science).
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-  - [CS50’s Introduction to Computer Science](#cs50s-introduction-to-computer-science)
+- [About](#about)
+- [CS50’s Introduction to Computer Science](#cs50s-introduction-to-computer-science)
 - [Course Syllabus](#course-syllabus)
   - [Week 0 Scratch](#week-0-scratch)
   - [Week 1 C](#week-1-c)
@@ -26,9 +22,15 @@ is taught by [David J. Malan](https://github.com/dmalan) and is available on
   - [Seminars](#seminars)
   - [Final Project](#final-project)
 
-## Introduction
+## About
 
-### CS50’s Introduction to Computer Science
+- This repository contains my solutions to the Harvard CS50x course.
+- The course is taught by [David J. Malan](https://github.com/dmalan) and is
+  available on
+  [edX](https://www.edx.org/course/cs50s-introduction-to-computer-science).
+- My solutions are available under the [GPL-3.0 license](./LICENSE).
+
+## CS50’s Introduction to Computer Science
 
 This course teaches students how to think algorithmically and solve problems
 efficiently. Topics include abstraction, algorithms, data structures,
@@ -41,60 +43,38 @@ sciences.
 
 ### Week 0 Scratch
 
-Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.
+Scratch is a free programming language and online community where you can create
+your own interactive stories, games, and animations.
 
-For Week 0, I have created a game called "Die Hard with a Scratch" which is based on the Die Hard film series and based on the ubiquitous character of Hans Gruber. It is a single player game where the player controls the character of Hans Gruber and must avoid baseballs thrown by the character of Mrs. McClane. For more information, please see the [Game Design Document](Week%200/GameDesign.md).
+For Week 0, I have created a game called "Die Hard with a Scratch" which is
+based on the Die Hard film series and based on the ubiquitous character of Hans
+Gruber. It is a single player game where the player controls the character of
+Hans Gruber and must avoid projectiles thrown by the character of Mrs. McClane.
 
 - [Learn more ›](Week%200/Readme.md)
 
 ### Week 1 C
 
-- [Learn more ›](Week%201/Readme.md)
-
 ### Week 2 Arrays
-
-- [Learn more ›](Week%202/Readme.md)
 
 ### Week 3 Algorithms
 
-- [Learn more ›](Week%203/Readme.md)
-
 ### Week 4 Memory
-
-- [Learn more ›](Week%204/Readme.md)
 
 ### Week 5 Data Structures
 
-- [Learn more ›](Week%205/Readme.md)
-
 ### Week 6 Python
-
-- [Learn more ›](Week%206/Readme.md)
 
 ### Week 7 SQL
 
-- [Learn more ›](Week%207/Readme.md)
-
 ### Week 8 HTML, CSS, JavaScript
-
-- [Learn more ›](Week%208/Readme.md)
 
 ### Week 9 Flask
 
-- [Learn more ›](Week%209/Readme.md)
-
 ### Week 10 Emoji
-
-- [Learn more ›](Week%210/Readme.md)
 
 ### Cybersecurity
 
-- [Learn more ›](Week%211/Readme.md)
-
 ### Seminars
 
-- [Learn more ›](Week%212/Readme.md)
-
 ### Final Project
-
-- [Learn more ›](Week%213/Readme.md)
