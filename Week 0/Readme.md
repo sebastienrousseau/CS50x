@@ -2,7 +2,12 @@
 
 CS50’s Introduction to Computer Science
 
-## What to Do
+## Lecture
+
+- [Download Text (.txt) file](assets/transcript/lecture0-en.txt)
+- [Download SubRip (.srt) file](assets/subtitle/lecture0-en.srt)
+
+## Pre-requirements
 
 - Download and install the latest version of [Chrome][12], if you don’t have it
   already.
@@ -13,7 +18,11 @@ CS50’s Introduction to Computer Science
 
 - By Sunday, January 1, 2023 at 4:59 AM GMT.
 
-## Scratch
+## Specification
+
+### Brief
+
+#### Scratch
 
 It’s time to choose your own adventure! Your assignment, quite simply, is to
 implement in Scratch, at [scratch.mit.edu][1], any project of your choice, be it
@@ -68,27 +77,37 @@ Once finished with your project, select File > Save now one last time. Then
 select File > Save to your computer and keep that file so that you can submit
 it. If prompted by your computer to Open or Save the file, be sure to Save it.
 
-## Actions taken
+### Actions taken
 
-### Step 1 of 2
+#### Step 1 of 2
 
 - [x] Form
 
-### Step 2 of 2
+#### Step 2 of 2
 
 - [x] .sb3 file
 
-The below step assumes that you’ve downloaded your Scratch project as a file whose name ends in .sb3. And this step also assumes that you’ve signed up for a GitHub account.
+The below step assumes that you’ve downloaded your Scratch project as a file
+whose name ends in .sb3. And this step also assumes that you’ve signed up for a
+GitHub account.
 
-1. Submit [this form](https://forms.cs50.io/755f67a3-052d-44af-8d16-b0209fa4dafb).
-2. Visit [this link](https://submit.cs50.io/invites/9770b67479384c4d8c37790779e466d9), log in with your GitHub account, and click **Authorize cs50**. Check the box indicating that you’d like to grant course staff access to your submissions, and click **Join course**.
-3. Go to [submit.cs50.io/upload/cs50/problems/2022/x/scratch](https://submit.cs50.io/upload/cs50/problems/2022/x/scratch). Click “Choose File” and choose your `.sb3` file. Click **Submit**.
+1. Submit
+   [this form](https://forms.cs50.io/755f67a3-052d-44af-8d16-b0209fa4dafb).
+2. Visit
+   [this link](https://submit.cs50.io/invites/9770b67479384c4d8c37790779e466d9),
+   log in with your GitHub account, and click **Authorize cs50**. Check the box
+   indicating that you’d like to grant course staff access to your submissions,
+   and click **Join course**.
+3. Go to
+   [submit.cs50.io/upload/cs50/problems/2022/x/scratch](https://submit.cs50.io/upload/cs50/problems/2022/x/scratch). Click “Choose File” and choose your `.sb3` file. Click **Submit**.
 
-To view your current progress in the course, visit the course gradebook at [cs50.me/cs50x](https://cs50.me/cs50x)!
+To view your current progress in the course, visit the course gradebook at
+[cs50.me/cs50x](https://cs50.me/cs50x)!
 
-## Submission for the Problem Set 0
+## Submission to the Problem Set 0
 
-Please refer to the [Game Design][13] document for details on the submission of the Problem Set 0.
+Please refer to the [Game Design][13] document for details on the submission to
+the Problem Set 0.
 
 [1]: https://scratch.mit.edu/
 [2]: https://scratch.mit.edu/projects/277537196
