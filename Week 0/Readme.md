@@ -4,6 +4,7 @@ CS50’s Introduction to Computer Science
 
 ## Lecture
 
+- [![Watch the video](https://img.youtube.com/vi/1tnj3UCkuxU/0.jpg)](https://youtu.be/1tnj3UCkuxU)
 - [Download Text (.txt) file](assets/transcript/lecture0-en.txt)
 - [Download SubRip (.srt) file](assets/subtitle/lecture0-en.srt)
 
