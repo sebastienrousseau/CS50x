@@ -1,5 +1,26 @@
 # CS50x
 
+## Table of Contents
+
+- [CS50x](#cs50x)
+  - [Table of Contents](#table-of-contents)
+  - [CS50’s Introduction to Computer Science](#cs50s-introduction-to-computer-science)
+  - [Course Syllabus](#course-syllabus)
+    - [Week 0 Scratch](#week-0-scratch)
+    - [Week 1 C](#week-1-c)
+    - [Week 2 Arrays](#week-2-arrays)
+    - [Week 3 Algorithms](#week-3-algorithms)
+    - [Week 4 Memory](#week-4-memory)
+    - [Week 5 Data Structures](#week-5-data-structures)
+    - [Week 6 Python](#week-6-python)
+    - [Week 7 SQL](#week-7-sql)
+    - [Week 8 HTML, CSS, JavaScript](#week-8-html-css-javascript)
+    - [Week 9 Flask](#week-9-flask)
+    - [Week 10 Emoji](#week-10-emoji)
+    - [Cybersecurity](#cybersecurity)
+    - [Seminars](#seminars)
+    - [Final Project](#final-project)
+
 ## CS50’s Introduction to Computer Science
 
 This course teaches students how to think algorithmically and solve problems

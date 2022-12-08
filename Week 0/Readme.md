@@ -1,13 +1,69 @@
 # CS50x - Week 0 Scratch
 
-CS50’s Introduction to Computer Science
+CS50’s Introduction to Computer Science. This is CS50, Harvard University's introduction to the intellectual enterprises of computer science and the art of programming.
+
+## Table of Contents
+
+- [CS50x - Week 0 Scratch](#cs50x---week-0-scratch)
+  - [Table of Contents](#table-of-contents)
+  - [Lecture](#lecture)
+  - [Pre-requirements](#pre-requirements)
+  - [When to Do It](#when-to-do-it)
+  - [Specification](#specification)
+    - [Brief](#brief)
+      - [Scratch](#scratch)
+    - [Actions taken](#actions-taken)
+      - [Step 1 of 2](#step-1-of-2)
+      - [Step 2 of 2](#step-2-of-2)
+  - [Submission to the Problem Set 0](#submission-to-the-problem-set-0)
 
 ## Lecture
 
+[Download Transcript Text (.txt) file](assets/transcript/lecture0-en.txt)
+
+or
+
 [![Watch the video](https://img.youtube.com/vi/1tnj3UCkuxU/0.jpg)](https://youtu.be/1tnj3UCkuxU)
 
-- [Download Text (.txt) file](assets/transcript/lecture0-en.txt)
-- [Download SubRip (.srt) file](assets/subtitle/lecture0-en.srt)
+- 00:00:00 - Intro
+- 00:01:17 - Problem Solving
+- 00:05:36 - Representation
+- 00:06:14 - Binary
+- 00:13:25 - Letters
+- 00:16:40 - ASCII
+- 00:20:12 - Unicode
+- 00:25:38 - Color
+- 00:28:00 - Images
+- 00:29:28 - Videos
+- 00:30:43 - Music
+- 00:31:50 - Questions on representation
+- 00:35:41 - Algorithms
+- 00:40:33 - Time to solve
+- 00:43:57 - Pseudocode
+- 00:50:35 - Scratch
+- 00:52:39 - Scratch blocks
+- 00:57:22 - Hello world
+- 01:03:30 - Inputs to outputs, outputs to inputs
+- 01:05:50 - Text to speech
+- 01:07:41 - Meow
+- 01:08:35 - Loops
+- 01:10:42 - Custom blocks
+- 01:15:50 - Conditionals
+- 01:17:25 - Forever
+- 01:18:42 - Video sensing
+- 01:20:25 - Whack-a-mole
+- 01:21:57 - One piece at a time
+- 01:22:48 - Oscartime
+- 01:24:24 - Oscartime stage
+- 01:25:30 - Oscartime trash can
+- 01:27:18 - Oscartime falling trash
+- 01:29:42 - Oscartime dragging trash
+- 01:31:30 - Putting Oscartime together
+- 01:33:42 - Movement
+- 01:35:32 - Movement's abstractions
+- 01:37:30 - Bouncing
+- 01:39:05 - Following
+- 01:41:00 - Ivy's Hardest Game
 
 ## Pre-requirements
 

@@ -7,6 +7,21 @@
   [Die Hard with a Scratch.sb3](./sb3/Die%20Hard%20with%20a%20Scratch.sb3) is
   available under [GPL-3.0 license](../LICENSE).
 
+## Table of Contents
+
+- [Die Hard with a Scratch](#die-hard-with-a-scratch)
+  - [Table of Contents](#table-of-contents)
+  - [Game Design](#game-design)
+  - [Game Design Document](#game-design-document)
+    - [High Concept](#high-concept)
+    - [Demographic](#demographic)
+    - [Overview](#overview)
+    - [Characters](#characters)
+      - [Hans Gruber](#hans-gruber)
+      - [Holly Gennero (Holly McClane)](#holly-gennero-holly-mcclane)
+    - [Unique Selling Points](#unique-selling-points)
+    - [Gameplay summary](#gameplay-summary)
+
 ## Game Design
 
 The following specifies a design for a quick game implemented in Scratch.
