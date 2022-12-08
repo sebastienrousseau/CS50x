@@ -44,8 +44,14 @@ it was the second game with starring Technos Japan's video game character
 
 ### High Concept
 
-A game where you play as a Hans Gruber type character, trying to dodge baseball
-thrown by a pretty upset Mrs. McClane character.
+A single player game where you play as a Hans Gruber type character, trying to
+dodge various objects thrown at you by a pretty upset Mrs. McClane character.
+
+The game is a parody of the Die Hard film series and a perfect time for a Die
+Hard Christmas binge watching. **Merry Christmas Everyone!**
+
+Just press the space bar to jump and avoid the projectiles. You can also use the
+left and right arrow keys to move left and right your character.
 
 ### Demographic
 
@@ -79,13 +85,14 @@ She has made her mission to throw at Gruber any kind of object that she can find
 to stop him from his machiavellian plans.
 
 A fictional Los Angeles environment is presented in the game with the famous
-Nakatomi Plaza tower.
+Nakatomi Plaza tower in distress.
 
 ### Characters
 
 #### Hans Gruber
 
-Gruber is a cunning thief and criminal mastermind from Germany who holds the Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.
+Gruber is a cunning thief and criminal mastermind from Germany who holds the
+Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.
 
 ![Hans Gruber](assets/HansGruber.svg)
 
@@ -97,11 +104,14 @@ Holly Gennero is a former police officer and the ex-wife of John McClane.
 
 ### Unique Selling Points
 
-Humour: A true crowd pleasing game featuring a simple game play and classic cop movie characters. The game is a parody of the Die Hard film series and a perfect time for Christmas binge watching.
+Humour: A true crowd pleasing game featuring a simple game play and classic cop
+movie characters. The game is a parody of the Die Hard film series and a perfect
+time for Christmas binge watching.
 
 ### Gameplay summary
 
-The game is a single player game where the player controls the character of Hans Gruber and must avoid baseballs thrown by the character of Mrs. McClane.
+The game is a single player game where the player controls the character of Hans
+Gruber and must avoid baseballs thrown by the character of Mrs. McClane.
 
 Just use the space bar to jump and avoid the baseballs.
 
