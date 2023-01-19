@@ -1,0 +1,3094 @@
+[MUSIC PLAYING]
+DAVID J. MALAN: All right.
+So this is CS50.
+And this is week 1, the one in which you learn a new language, which
+is something we technically said last week, at least if you had never
+played with this graphical language known as Scratch before, which itself
+was a programming language.
+But today, as promised, we transition to something
+a little more traditional, a little more text-based,
+not puzzle piece- or block-based, known as C.
+This is an older language.
+It's been around for decades.
+But it's a language that underlies so many of today's more modern languages,
+among them something called Python that we'll also
+come to in a few weeks' time.
+Indeed, at the end of the semester, the goal
+is for you to feel that you've not learned Scratch,
+you've not learned C, or even Python, for that matter,
+but fundamentally that you've learned how to program.
+Unfortunately, when you learn how to program
+with a more traditional language like this, there's just so much distraction.
+Last week I described all of the syntax, all of the weird punctuation
+that you see in this, like the hash symbol, these angled brackets,
+parentheses, curly braces, backslash n, and more.
+Well, today we're not going to reveal what all of those little particulars
+mean.
+But by next week, will this no longer look like the proverbial Greek
+to you, a language that, presumably, you've never actually seen or typed
+before.
+But to do that, we'll explore some of the very same topics as last week.
+So recall that, via Scratch-- and presumably via problem set 1--
+we took a look at things called functions that are actions or verbs.
+And related to functions were arguments like inputs.
+And related to some functions were returned values like outputs.
+Then we talked a bit about conditionals, forks in the road, so to speak,
+Boolean expressions, which are just yes/no questions or true/false
+questions, loops, which let you do things again and again, variables,
+like in math, that let you store values temporarily,
+and then even other topics still.
+So if you were comfortable on the heels of problem set 0 and last week,
+realize that all of these topics are going to remain with us.
+So really, today is just about acquiring all the more of a mental model for how
+you translate those ideas into, presumably, a very cryptic new syntax--
+a new syntax, frankly, that's actually more
+simple in some ways than your own human language,
+be it English or something else, because there's far fewer vocabulary words.
+There's actually far less syntax that you might
+have in, say, a typical human language.
+But you need to be with these computer languages all the more precise
+so that you're most, ultimately, correct,
+and ultimately will see to your code is successful along a few other lines
+as well.
+So if you think about the last time you kind of wandered around not really
+knowing what you were doing or encountered something new--
+might not have been that long ago, entering Harvard Yard for the very
+first time, or Old Campus or the like, be it in Cambridge or New Haven--
+you didn't really need to know how to do everything as a first year.
+You didn't need to know who everyone was,
+where everything was, how Harvard or Yale, or anything else for that matter,
+worked.
+You sort of got by day to day by just focusing on those things that matter.
+And anything you didn't really understand,
+you sort of turned a blind eye to until it's important.
+And that's, indeed, what we're going to do today.
+And really, for the next several weeks, we'll
+focus on details that are initially important
+and try to wave our hands, so to speak, at details that, yeah, eventually
+we'll get to, might be interesting.
+But for now, they might be distractions.
+And by distractions, I really mean some of that syntax
+to which I alluded earlier.
+So by the end of today-- and really, by the end of problem set 1,
+your first foray, presumably, into this language called C--
+you'll have written some code.
+And you'll be asking yourself-- we'll be asking yourselves--
+just how good is that code?
+Well, first and foremost, per last week, be it in Scratch
+or phone book form, code ultimately needs to be correct, to be well done.
+You want the problem to be solved correctly.
+So that one sort of goes without saying.
+And along the way this term, we'll provide you with tools and techniques
+so you don't have to just sit there sort of endlessly trying an input,
+checking the output, trying another input, checking the output.
+There's a lot of automation tools in the real world--
+and in this class and others like it-- that
+will help facilitate you answering that question for yourself, is my code
+correct, according to our specifications or the like.
+But then something that's going to take more time
+and you're probably not going to feel 100% comfortable with the first week,
+the first weeks, is just how well designed your code is.
+It's one thing to speak English or write English,
+but it's another thing-- or any language, for that matter.
+But it's another thing to speak it or write it well.
+And we spend all these years in middle school, high school, presumably,
+writing papers and other documents, getting grades and feedback on them
+as to how well formulated your arguments were, how well structured
+your paper was, and the like.
+And there's that same idea in programming.
+It doesn't matter necessarily that you've just solved a problem correctly.
+If your code is a complete visual mess, or if it's crazy long,
+it's going to be really hard for someone else
+to wrap their mind around what your code is doing and, indeed, to be confident
+if it is correct.
+And honestly, you-- the next morning, the next year,
+the next time you look at that code-- might have no idea
+what you yourself were even thinking.
+But you will if you focus, too, on designing good code,
+getting your algorithms efficient, getting your code nice and clean,
+and even making sure your code looks pretty, which
+we'd describe as a matter of style.
+So in the written human world, having punctuation in the right place,
+capitalization and the like-- the sort of way you write an essay
+but not necessarily send a text message--
+relates to style, for instance.
+And so good style in code is going to have
+a few of these characteristics that are pretty easily taught and remembered.
+But you just have to start to get in the habit of writing code in a certain way.
+So these three axes, so to speak, correctness, design, and style,
+are really the overarching goals when writing code that
+ultimately is going to look like this.
+So this program we conjectured last week does
+what if you run it on a Mac or PC or somewhere else, presumably?
+What does it do?
+Yeah?
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: It just prints, Hello, world.
+And honestly, that's kind of atrocious that you
+need to hit your keyboard keys this many times with this cryptic syntax just
+to get a program to say, Hello, world.
+So a spoiler-- in a few weeks' time when we
+introduce other, more modern languages, like Python,
+you can distill this same logic into literally one line of code.
+And so we're getting there, ultimately.
+But it's helpful to understand what it is that's going on here,
+because even though this is a pretty cryptic syntax,
+there's nothing after this week and, really, next week that you shouldn't
+be able to understand even about something that right now looks
+a little something like this.
+So how do you write code?
+Well, I've given us sort of the answer to a problem.
+How do you print, Hello, world, on the screen?
+So what do I do with this code?
+Well, we're in the habit of typically writing things with, like, Microsoft
+Word or Google documents.
+And yeah, I could open up Word or Google Docs or Pages or the like
+and just literally transcribe that character for character,
+save it, and boom, I've got a program.
+But the problem, per last week, is that computers only understand or speak
+what other language, so to speak?
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: Yeah, so binary, zeros and ones.
+And so this, obviously, is not zeros and ones.
+So it doesn't matter if I put it in a Word doc, Google Doc, Pages file,
+or the like.
+The computer is not going to understand it until I somehow
+translate it to zeros and ones.
+And honestly, none of those tools that I rattled off
+are really appropriate for programming.
+Why?
+Well, they come with features like bold facing and italics
+and sort of fluffy, aesthetic stuff that has no functional impact on what
+you're trying to do with your code.
+And they don't have the ability, it would
+seem, to convert that code ultimately to zeros and ones.
+But tools that do have this capability might
+be called Integrated Development Environments, or IDEs,
+or, more simply, text editors.
+A text editor is a tool that a programmer uses perhaps every day
+to write their code.
+And it's a simple program-- here, for instance, a very popular one
+called Visual Studio Code, or VS Code.
+And at the top here, you see that I've actually
+created in advance before class a very simple empty file called "hello.c."
+Why?
+Well, .c indicates by convention that this is going to be a file in which
+there is C code.
+It's not .docx, which would mean in this file is a Microsoft Word document,
+or .pages is a Pages file.
+This is .c, which means in this file is going to be text in the language called
+C. This number 1 here is just an automatic line number that's going help
+me keep track of how long or short this program is.
+And the cursor is just blinking there, waiting
+for me to start typing some code.
+Well, let me go ahead and type out exactly the same code.
+For me, it comes pretty comfortably from memory.
+So I'm going to go ahead and include something called standardio.h--
+more on that later.
+I'm going to magically type int main(void), whatever that means--
+we'll come back to that later--
+one of these curly braces and then a sibling there that closes the same.
+Then I'm going to hit Tab to indent a few spaces.
+And then I'm going to type not print, but printf, then "Hello, world," /n,
+close quote, close parenthesis, semicolon.
+And I dare say this was essentially the very first program I wrote some
+25 years ago.
+I wrote it to say, "Hi, CS50."
+Now it just says the more canonical, conventional, "Hello, world."
+But that's it.
+That's my very first program.
+And all I need to now do is maybe hit Command-S or Control-S
+to save the file.
+And voila, I am a programmer.
+The catch though, is, OK, how do I run this?
+Like, on your Mac or PC, how do you run a program?
+Well, usually double-click an icon.
+On your phone, you tap an icon.
+In this environment that we're using and that many programmers-- dare
+say most programmers-- use, you don't have immediately a nice, pretty icon
+to double-click on.
+That's very user friendly, but it's not very necessary.
+Especially when you get more comfortable with programming,
+you're going to want to type commands because it's just faster than pointing
+and clicking a mouse.
+And you're going to want to automate things,
+which is a lot easier if it's all command or text-based, as opposed
+to mouse and muscular movements.
+And so here I have my program.
+It lives in this file called "hello.c."
+I need to now convert it, though, to zeros and ones.
+Well, how do I go about doing this, and how am I going to get from this
+so-called code--
+or source code, as it's conventionally called--
+to this, these zeros and ones that we'll now start calling machine code.
+The zeros and ones from last week can be used not only
+to represent numbers and letters, colors, audio, video, and more.
+It can also represent instructions to a computer, like print, or play a sound,
+or delete a file, or save a file.
+All the sort of basics of a computer somehow
+can be represented by other patterns of zeros and ones.
+And just like last week, it depends on the context
+in which these numbers are stored.
+Sometimes they're interpreted as numbers, like in a spreadsheet.
+Sometimes they're interpreted as colors.
+Sometimes they're interpreted as instructions, commands to your computer
+to do very low-level operations, like print something on the screen.
+So fortunately, last week's definition of computer science of problem solving
+is a nice mental model for exactly the goal at hand.
+I have some input, AKA source code.
+I want to output ultimately machine code, those zeros and ones.
+I certainly don't want to do this kind of process by hand.
+So hopefully there's an algorithm implemented by some special program
+that does exactly that.
+And those of you who do have some prior experience,
+this program might be called a?
+A compiler.
+So a few of you have, indeed, programmed before.
+Not all languages use compilers.
+C, in fact, is a language that does use a compiler.
+And so I just need to find myself--
+on my computer somewhere, presumably-- a so-called compiler,
+a program whose purpose in life is to convert one language to another.
+And source code written textually in C, like we saw a moment ago,
+is source code.
+The machine code is the corresponding zeros and ones.
+So let me go back to the same programming environment called
+Visual Studio Code or VS Code.
+This is typically a program you or any programmer on the internet
+can download onto their own Mac or PC and be on their way with whatever
+computer you own writing some code.
+A downside, though, of that approach is that all of us
+have slightly different versions of Macs or PCs.
+We have slightly different versions of operating systems.
+They may or may not be up to date.
+It's just a technical support nightmare to create a uniform environment,
+especially for an introductory class, where everyone should ideally
+be on the same page so we can get you up and running quickly.
+And so I'm actually using a cloud-based version of VS Code, something
+that you only need a browser to access.
+And then you can be on any computer, today or tomorrow.
+By the end of the semester, we're going to get you out of the cloud,
+so to speak, as best we can and get you onto your own Mac or PC,
+so that after this class, especially if it's the only CS class you ever take,
+you feel like you can continue programming in any number of languages,
+even with CS50 behind you.
+But for now, wonderfully, the browser version of VS Code
+should pretty much be identical to what the eventual downloadable
+version of the same would be.
+And you'll see in problem set 1 how to access this
+and how to get going yourself with your first programs.
+But I haven't mentioned this bottom part of the screen,
+this bottom part of the screen.
+And this is an area where we have what's called a terminal window.
+So this is sort of old-school technology that allows you, with a keyboard,
+to interact with a computer, wherever it may be-- on your lap, in your pocket,
+or even, in this case, in the cloud.
+So on the top-hand portion of this screen
+is my text editor, like tabbed windows, like in many programs, where
+I can just create files and write code.
+The bottom of the screen here, my so-called terminal window,
+gives me the ability to run commands on a server
+that currently I have exclusive access to.
+So because I logged into VS Code with my account online,
+I have my own sort of virtual server, if you will, in the cloud--
+otherwise known as, in this context, a container.
+This has its own operating system for me, its own hard drive,
+if you will, where I can save and create files of my own,
+separate from yours and vice versa.
+And it's at this very simple prompt, which
+is conventionally-- but not always-- abbreviated by a dollar sign,
+has nothing to do with currency.
+It just means, type your commands here.
+This is where I'm going to be able to type commands,
+like compile my source code into machine code.
+So it's a Command Line Interface, or CLI, on top of an operating system
+that you might not have ever used or seen, but it's very popular,
+called Linux.
+Odds are almost all of us in this room are using Mac OS or Windows right now,
+but we're all going to start using an operating system called Linux, which
+is in a family of operating systems that offer not only this command
+line interface, but are used not just for programming, but for serving
+websites and developing applications and the like.
+And it's, indeed, a familiar and very powerful interface, as we'll see.
+So how do I go about making this file, hello.c, into a program?
+There's no icon to double-click, but there is a command.
+I can type, make hello, at this dollar sign prompt, go ahead and hit Enter,
+and nothing appears to happen.
+But that's a good thing.
+And as we'll see in programming, almost always,
+if you don't see anything go wrong, that means everything went right.
+So this is going to be a rarity at first,
+but this is a good thing that it just seems to do nothing.
+But now there is in the folder in my accounts
+in this on the cloud a file called "hello."
+And it's a bit of a weird command, but you'll get familiar with it
+before long.
+. just means go into my current folder.
+/hello means run the program called "hello" in this current folder.
+So ./hello, and then Enter, and voila, now I'm actually not just programming,
+but running my actual code.
+So what have I just done?
+Let me go ahead and do this.
+I'm going to go ahead and open up the sidebar of this program,
+and you'll see in problem set 1 how to do this.
+And this might look a little different based on your own configuration.
+Even the color scheme I'm using might ultimately look different from yours,
+because it supports a nice colorful theme.
+So you can have different colors and brightnesses depending
+on your mood or the time of day.
+What I've opened here, though, is what is called in VS Code Explorer,
+and this is just all of the files in my cloud account.
+And there's not many right now.
+There's only two.
+One is the file called hello.c, and it's highlighted
+because I've got it open right there.
+And the other is a file called "hello," which is brand new
+and was created when I ran that command.
+And what's now worth noting is that now things are getting a little more
+like Mac OS and Windows.
+Like on the left-hand side, you have a GUI, a Graphical User Interface.
+But on the bottom here, again, you have a CLI, Command Line Interface.
+These are just different ways to interact with computers,
+and you'll get comfortable with both.
+And honestly, you're certainly familiar and comfortable with GUIs already,
+so it's the command line one with which we'll spend some time.
+Now suppose that I just wanted to do something
+more than compile this program.
+Suppose I wanted to go ahead and remove it.
+Like, uh-uh, no, I made a mistake.
+I want to say, "Hello, CS50," not "Hello, world."
+I could just hover up here, like in any software, and I could right-click,
+and I could poke around, and there, delete permanently.
+So most of us might have that instinct on a Mac or PC.
+You right-click or Control-click, and you poke around.
+But in a command line interface, let me do this instead.
+The command for removing or deleting a file
+in the world of Linux, this other operating system,
+is just a type rm for remove, and then "hello," Enter.
+It's a somewhat cryptic confirmation message, but this just means,
+are you sure?
+I'm going to go ahead and type Y for Yes.
+And now when I hit Enter, watch what happens
+at top left in the Explorer, the GUI, the graphical interface.
+Voila, it disappears.
+Not terribly exciting, but this just means
+this is a graphical version of what we're seeing here.
+And in fact, if you want to never use the GUI again--
+I'll go ahead and close it with a keyboard shortcut here--
+you can forever just type ls for list and hit Enter.
+And you will see in the command line interface
+all of the files in your current folder.
+So anything you can do with a mouse, you can
+do with this command line interface.
+And indeed, we'll see many more things that you can do as well.
+But the inventors of this, this operating system and its predecessors,
+were very succinct.
+Like, the command is rm for remove.
+The command is ls for list.
+It's very terse.
+Why?
+Because it's just faster to type.
+So before we forge ahead with making something more interesting than
+just "Hello, world," let me pause here to see
+if there's questions on source code or machine
+code or compiler or this command line interface.
+Yeah?
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: Really good question, and let me recap.
+If I were to make changes to the program,
+run it, and then maybe make other changes and try to rerun it,
+would those changes be reflected, even though I've reworded slightly.
+Well, let's do this.
+I already removed the old version.
+So let me go ahead and point out that if I do ./hello now,
+I'm going to see some kind of error because I just deleted the file.
+No such file or directory, so it's not terribly user friendly,
+but it's saying what the problem is.
+Let me go ahead and remake it by typing make hello.
+Now if I type ls, I'll see not one but two files again, and one of them
+is even green with a little asterisk to indicate that it's executable.
+It's sort of the textual version of something
+you could double-click in our human world.
+So now, of course, if I run hello, we're back where I started, "Hello, world."
+But now suppose I change it to "Hello, CS50," like I did years ago.
+Let me go ahead and save the file with Command-S or Control-S. Down here now,
+let me run ./hello again, and voila.
+Huh.
+So let me ask someone else to answer that question.
+What's the missing step?
+Why did it not say, "Hello, CS50."
+Yeah?
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: Yeah, so I didn't compile it again.
+So sort of newbie mistake, you're going to make this mistake and many others
+before long.
+But now let me go ahead and remake hello, enter.
+It's going to seemingly make the same program.
+But this time when I run it, it's, "Hello, CS50."
+Any other questions on some of these building blocks?
+And we'll come back to all the crazy syntax I typed before long.
+But for now, we're focusing on just the output.
+Yeah?
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: When I keep running make,
+it creates a new version of the machine code.
+So it keeps changing the hello program and the hello file, and that's it.
+There's no make file, per se.
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: Good question, no.
+If I open up that directory, you'll see that there's just the one.
+And it doesn't matter how many times I run make hello--
+three, four, five-- it just keeps overwriting the original.
+So it's kind of like just saving in the world of Google Docs or Microsoft
+Word or the like.
+But there's an additional step today.
+We have to then convert my words to the computer's, the zeros and ones.
+Yeah, in front.
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: Oh, what happens if I run hello.c?
+So let me go ahead and do ./hello.c, which is a mistake you'll invariably
+make early on.
+Permission denied.
+So what does that mean?
+This is where the error messages mean something
+to the people who designed the operating system, but it's a little cryptic.
+It's not that you don't have access to the file.
+It means that it's not executable.
+This is not something you have permission to run,
+but you do have permission to read or write it-- that is, change it.
+AUDIENCE: [INAUDIBLE].
+DAVID J. MALAN: Oh, really good question.
+So if I have named my file, hello dot C, or more generally something
+dot C, of the things that Make does is it automatically
+picks the file name for me.
+And we'll discuss a bit--
+we'll discuss this a bit more next week.
+Make itself-- is kind of the first of white lies today--
+itself is not a compiler.
+It's a program that knows how to find and use the compiler on the system
+and automatically create the program.
+If I use, as we'll discuss next week, the actual compiler myself,
+I have to type a much longer sequence of commands to specify explicitly
+what do I want the name of my program to be.
+Make is a nice program, especially in week 1,
+because it just automates all of that for us.
+And so here, we have now a program that very simply prints
+something on the screen.
+So let's not put this into the context of where
+we left off last time in the context of Scratch and inputs and outputs.
+So we discuss the last time, of course, functions and arguments.
+Functions, again, are those actions and verbs like say, or ask, or the like.
+And the arguments were the inputs to those functions,
+generally in those little white ovals that, in Scratch, you
+could type words or numbers into.
+We'll see, in all of the languages we're going to see this term,
+have that same capability.
+And let's just start to translate one of these things to another.
+So for instance, let's put this same program in C,
+in the context of Scratch.
+This is what Hello, World looked like last week in the form of one function.
+This week, of course, it looks like print.
+And then the parentheses, notice, are kind of
+deliberately designed in the world of Scratch to resemble that same shape.
+Even though this is a white oval, you kind of get
+that it's kind of evoking that same idea with the parentheses.
+Technically the function in C, it's not called say.
+It's not even called print.
+It's called printf.
+The F stands for formatted, but we'll see what that means in a moment.
+But printf is the closest analogous function
+for say in the world of C. Notice if, though, you
+want to print something like Hello, World or Hello CS50 in C,
+you don't just write the words as we did last week.
+You also had an add what, if you notice already
+what's missing from this version.
+Yeah, so the double quotes on the left and the right.
+So, that's necessary in C whenever you have a string of words.
+And I'm using that word deliberately.
+Whenever you have multiple words like this, this is known as a string
+as we'll see.
+And you have to put it in double quotes, not single quotes.
+You have to put it in double quotes.
+There's one other stupid thing that we need to have in my C code
+in order to get this function to do something ultimately, which is what?
+Semicolon.
+So just like in our human world, you eventually
+got into the habit of using, at least in formal writing, periods.
+Semicolon is generally what you use to finish your thought
+in the world of programming with C.
+All right, so we have that function in place.
+Now, what does this really fit into in terms of the mental model?
+Well, functions take arguments.
+And it turns out functions can have different types of outputs.
+And we've actually seen both already last week.
+One type of output from a function can be something called a side effect.
+And it generally refers to something visual,
+like something appearing on the screen or a sound playing from your computer.
+It's sort of a side effect of the function doing its thing.
+And indeed, last week we saw this in the context of passing in something
+like Hello, World as input to the say function.
+And we saw on the screen Hello, World, but it was kind of a one off.
+It's one and done.
+You can't actually do anything with that visual output
+other than consume it, visually, with your human eyes.
+But sometimes, recall last week, we had functions like the ask block that
+actually returned me some value.
+Remember the ask, what's your name.
+It handed me back whatever answer the human typed in.
+It didn't just arbitrarily display it on the screen.
+The cat didn't necessarily say it on the screen.
+It was stored, instead, in that special variable that was called answer.
+Because some functions have not side effects but return values.
+They hand you back an output that you can use and reuse,
+unlike the side effect, which, again displays and that's it.
+You can't sort of catch it and hold on to it.
+So, in the context of last week, we had the ask block.
+And that had this special answer return value.
+In C, we're going to see in just a moment,
+we could translate this as follows.
+The closest match I can propose for the ask block
+is a function that we're going to start calling get string.
+String is, again, a word, a set of words, like a phrase
+or a sentence in programming.
+It, too, is a function insofar as it takes input and pretty much--
+this isn't always true-- but very often when
+you have a word in C followed by an open parenthesis and a closed parenthesis,
+it's most likely the name of a function.
+And we're going to see that there's some exceptions to that.
+But for now this indeed looks like a function
+because it matches that pattern.
+If I want to ask the question, what's your name, question mark--
+and I'm even going to deliberately put a space there just to kind of move
+the cursor a little bit over so that the human isn't typing literally
+after the question mark.
+So that's just the nitpicky aesthetic.
+This is perhaps the closest analog to just asking that question.
+But because the ask block returns a value,
+the analog here forget string is that it, too, returns a value.
+It doesn't just print the human's input.
+It hands it back to you in the form of a variable, a.k.a. return value,
+that I can then use and reuse.
+Now ideally it would be as simple as this literally
+saying answer on the left equals.
+And this is where things start to diverge
+from math and sort of our human world.
+This equal sign, henceforth, is not the equal sign.
+It is the assignment operator.
+To assign a value means to store a value in some variable.
+And you read these things, weirdly, right to left.
+So here is a function called get string.
+I claim that it's going to return to you whatever
+the human types in as their name.
+It's going to get stored over here on the left because
+of this so-called assignment operator, that yes is an equal sign.
+But it doesn't mean equality in this context.
+It makes things equal.
+But it does so by copying the value on the right into the thing on the left.
+Unfortunately, we're not quite done yet with C.
+And this is where, again, it gets a little annoying at first
+where Scratch just let us express our ideas without so much syntax.
+In C when you have a variable you don't just
+give it a name like you did in Scratch.
+You also have to tell the computer in advance what type of value
+it is storing.
+String is one such type of value.
+Int, for integer, is going to be another.
+And there's even more than that we'll see today and beyond.
+And this is partly an answer to the question that came up one or more times
+last week, which was how does a computer distinguish this pattern of zeros
+and ones from this.
+Like is this a letter, a number, a color, a piece of video.
+And I just claimed last week that it totally depends on the program.
+It depends on the context.
+And that's true.
+But within those programs, it often depends
+on what the human programmer said the type of the value is.
+If this specifies that the string, which means
+interpret the following zeros and ones that
+are stored in my program as words or letters, more generally.
+If it's an int for integer, it would be implying, by the programmer,
+treat the following zeros and ones in my program as a number,
+an integer, not a string.
+So here's where this week, unlike with Scratch,
+which is kind of figures out what you mean, with C in a lot of languages
+you have to be this pedantic and tell it what you mean.
+There's still one stupid thing missing from my code here.
+What's still missing here?
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: And we still need the stupid semicolon.
+And I'm sort of impugning it here.
+Because honestly, these are the kinds of stupid mistakes
+you're going to make today, tomorrow, this weekend, next week,
+a few weeks from now, until you start to notice this and recognize it
+as well as you do English or whatever your spoken language is.
+Yeah, question.
+Good question.
+Suppose I mix apples and oranges, so to speak,
+and I try to put a string in an int or an int in a string,
+the compiler is going to complain.
+So when I run that make command as I did earlier,
+it's not going to be nice and blissfully quiet and just give me another prompt.
+It's going to yell at me with honestly a very cryptic
+looking error message until we get the muscle memory for reading it.
+Other questions.
+Ah, what happened to the backslash n.
+So, we'll come back to that in just a moment, if we may.
+Because I have deliberately omitted it here but we did have it earlier.
+And we'll see the different behavior in a sec.
+Other questions.
+Yeah, not at all nitpicky.
+These are the kinds of things that just matter.
+And it's going to take time to recognize and develop this muscle memory.
+Everything I've typed here except, for the W at the moment, is lowercase.
+And the W is capitalized just because it's English.
+Everything else is lowercase.
+And this kind of varies by language and also context.
+So, in many languages the convention is to use all lowercase letters
+for your variable names.
+Other languages might use some capitals, as well.
+But we'll talk about that before long.
+But this is the kind of thing that matters
+and is hard to see at first, especially when a little S doesn't look that
+different when it's on your tiny laptop screen from a capital S.
+But you'll start to develop these instincts.
+All right, so besides this particular block,
+let's go ahead and consider how we can go about implementing this now in code.
+So let me switch back to VS Code here.
+This was the program I had earlier.
+And let me go ahead and undo my CS50 change.
+And this time just rerun it.
+Rerun Make on Hello with the original version with the backslash n.
+Enter, nothing bad seems to have happened.
+So dot slash Hello, enter Hello, World.
+Now, if you're curious, this is a good instinct
+to start to acquire what happens if I get rid of this.
+Well, I'm probably not going to break things too badly.
+So let's try.
+Let me go ahead now and do Make Hello.
+Still compile.
+So it's not a really bad mistake.
+So let me go ahead and run dot slash Hello.
+What's the difference here?
+Yeah, what do you see that's different?
+Yeah, the dollar sign, my so-called prompt, stayed on the same line.
+Why?
+Well, we can presumably infer now that the backslash
+n is some fancy notation for saying create a new line,
+move the cursor, so to speak, to the next line.
+Notice that the cursor will move to the next line in my terminal window.
+If I keep hitting it, it just automatically,
+by nature of hitting enter, does it.
+But it'd be kind of stupid if when you run a program in this world,
+simple as it is, if the next command is now
+weirdly spaced in the middle of the terminal with the dollar sign,
+it just looks sloppy.
+It's really just an aesthetic argument.
+And notice that it's not acceptable or correct to do this, to hit enter there.
+Let me go ahead and save that, though, and see what happens.
+Let me go ahead now and run Make Hello enter.
+Oh my god, like four errors.
+This is like, what, 10 lines of errors for a one line program.
+And this is where, again, you'll start to develop the instincts for just
+reading this stuff.
+These kinds of tools, like the compiler tool we're using,
+were not designed necessarily with user friendliness in mind.
+That's changed over the decades, but certainly early
+on it's really just meant to be correct and precise with its errors.
+So what did I do here?
+Missing terminating close quote character,
+long story short, when you have a string in C,
+your double quotes just have to be on the same line just because.
+Now, there's the slight white lie.
+There's ways around this.
+But the best way around it is to use this so-called escape sequence.
+To escape something means generally to put a backslash, and then
+a special symbol like n for new line.
+And this is just the agreed upon way that humans, decades ago, decided,
+OK you don't just hit your enter key.
+You instead put backslash n and that tells the computer
+to move the cursor to the new line.
+So again, kind of cryptic.
+But once you know it, that's it.
+It's just another word in our vocabulary.
+So now let me transition to making my program a little more interactive.
+Instead of just saying Hello, world, let me
+change it like last week to say Hello, David,
+or whoever is interacting with the program.
+So I'm going to do string answer gets, get string,
+quote unquote, what's your name.
+I'm not going to bother with a new line here.
+I could.
+This is now just a judgment call.
+I deliberately want the human to type their name on the same line
+just because.
+And how do I now print this?
+Well last week recall we used say.
+And then we use the other block called join.
+So the idea here is the same.
+But the syntax this week is going to be a little different.
+It's going to be printf, which prints something on the screen.
+I'm going to go ahead and say Hello comma.
+And let me just go with this initially with the backslash n, semicolon.
+Let me go ahead and recompile my code.
+Whoops, damn doesn't work still.
+And look at all these errors.
+There's more errors than code I wrote.
+But what's going on here?
+Well, this is actually something, a mistake you'll see,
+somewhat often, at least initially.
+And let's start to glean what's going on here.
+So here, if I look at the very first line of output after the dollar sign--
+so even though it jumped down the screen pretty fast,
+I wrote Make Hello at the dollar sign, prompt.
+And then here's the first error.
+On Hello dot C, line 5--
+technically character 5, but generally line is enough to get you going--
+there's an error, use of undeclared identifier string.
+Did you mean standard in?
+So, I didn't.
+And this is not an obvious solution at first.
+But you'll start to recognize these patterns in error messages.
+It turns out that if I want to use string, I actually have to do this.
+I have to include another library up here, another line of code,
+rather, called CS50 dot H. We'll come back
+to what this means in just a moment.
+But if I now retroactively say, all right, what does standard I/O
+do for us up here.
+Before I added that new line, what is standard I/O doing?
+Well, if you think back to Scratch, there
+were a few examples with the camera and with the speech to-- the text to voice.
+Remember I had to poke around in the extensions button.
+And then I had to load it into Scratch.
+It didn't come natively with Scratch.
+C is quite like that.
+Some functions come with the language.
+But for the most part, if you want to use a function, an action or a verb
+like printf, you have to load that extension, so to speak,
+that more traditionally is called a library.
+So there is a standard I/O library, STD I/O, standard I/O,
+where I/O just means input and output.
+Which means, just like in MIT's World, there
+was an extension for doing text to voice or for using your camera.
+In C, there's an extension, a.k.a.
+a library, for doing standard input and output.
+And so if you want to use any functions related to standard input and output,
+like text from a keyboard, you have to include standard I/O dot
+H. And then can you use printf.
+Same goes here.
+Get string, it turns out, is a function that CS50 wrote some time ago.
+And as we'll see over the coming weeks, it just
+makes it way easier to get input from a user.
+C is very good with printf at printing output on the screen.
+C makes it really annoying and hard, as we'll see in a few weeks,
+to just get input from the user.
+So we wrote a function called get_string,
+but the only way you can use that is to load the extension,
+a.k.a. load the library called CS50.
+And we'll come back in time, like, why is it .h, why is it a hash symbol.
+But for now, standard I/O is a library that
+gives you access to printf and input- and output-related stuff.
+CS50 is a second library that provides you
+with access to functions that don't come with C
+that include something like get_string.
+So with that said, we've now kind of teased apart
+at a high level what lines 2 and now 1 are doing.
+Let me go ahead and rerun make hello.
+Now it worked.
+So all those crazy error messages were resolved by just one fix,
+so key takeaway is not to get overwhelmed by the sheer number
+of errors.
+Let me now do ./hello and if I type in my name, what am I going to say?
+What do you think?
+Yeah, hello answer, because the computer is going to take me literally.
+And it turns out that if you just write "hello,
+answer" all in the double quotes, you're really just passing
+English as the input to the printf function,
+you're not actually passing in the variable.
+And unfortunately in C, it's not quite as
+easy to plug things in to other things that you've typed.
+Remember in Scratch, there was not just the Save block
+but the Join block, which was kind of pretty,
+you can combine apples and oranges--
+or was it apple and banana?
+Then we changed it to hello and then the answer that the human typed in.
+In C, the syntax is going to be a little different.
+You tell the computer inside of your double quotes that you want to have
+a placeholder there, a so-called format code. %s means, hey, computer,
+put a string here eventually.
+Then outside of your quotes, you just add a comma and then you type
+in whatever variable you want the computer to plug in at that %s location
+for you.
+So %s is a format code which serves as a placeholder.
+And now the printf function was designed by humans years
+ago to figure out how to do the apple and banana
+thing of joining two words together.
+It's not nearly as user-friendly as it is in Scratch,
+but it's a very common paradigm.
+So let me try and rerun this now. make hello.
+No errors, that's good.
+./hello.
+What's my name, David?
+If I type Enter now, now it's hello.
+David.
+And the printf, here's the F in printf.
+It formats its input for you by using these placeholders for things like
+strings, represented again by %s.
+So a quick question then, if I focus here on line 7 for just a moment
+and even zoom in here, how many inputs is printf taking as a function?
+A moment ago, I'll admit that it was taking one input, "hello, world,"
+quote unquote.
+How many inputs might you infer printf is taking now?
+2.
+And it's implied by this comma here, which is separating the first one,
+quote, unquote, "hello, %s" from the second one, answer.
+And then just as a quick safety check here, why is it not 3?
+Because there's obviously two commas here.
+Why is it not actually 3 arguments or inputs?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Exactly.
+The comma to the left is actually part of my English grammar,
+that's all, so same syntax.
+And, again, here's where programming can just be confusing
+early on because we're using the same special punctuation to mean
+different things, it just depends on the context.
+And so now is actually a good time to point out
+all of the somewhat pretty colors that have been popping up on the screen
+here--
+even though I wasn't going to a format menu, I wasn't boldfacing things,
+I certainly wasn't changing things to red or blue or whatnot--
+that's because a text editor like VS Code syntax highlights for you.
+This is a feature of so many different programming environments nowadays,
+VS Code does it as well.
+If your text editor understands the language that you're programming in--
+C, in this case--
+it highlights in different colors the different types of ideas in your code.
+So, for instance, string and answer here are in black,
+but get_string a function is in this sort of nasty brown-yellow
+here right now, but that's just how it displays on the screen.
+The string, though, here in red is kind of jumping out at me,
+and that's marginally useful.
+The %s is in blue.
+That's kind of nice, because it's jumping out at me.
+And so it's just using different colors to make different things on the screen
+pop so you can focus on how these ideas interrelate
+and, honestly, when you might make a mistake.
+For instance, let me accidentally leave off this quote here.
+And now all of a sudden, notice if I delete the quote,
+the colors start to get a little awry.
+But if I go back there and put it back, now everything's back in place.
+What's another feature of this text editor?
+Notice when my cursor is next to this parenthesis, which
+demarcates the end of the inputs to the function,
+notice that highlighted in green here is the opening parenthesis.
+Why?
+It's just a visually useful thing, especially when
+you start writing more and more code, just to make
+sure your parentheses are lining up.
+And that's true for these curly braces over here on the left and the right.
+We'll come back to those in a moment.
+If I put my cursor there, you can see that these things correspond
+to one another.
+So it's nothing in your code fundamentally, it's just the editor
+trying to help you, the human, program.
+And you can even see it, though it's a little subtle--
+see these four dots here and these four dots here?
+That's my indentation.
+I configured VS Code to indent by four spaces, which
+is a very common convention.
+Any time I hit the Tab key, this too can help you make sure--
+once we have more interesting and longer programs--
+that everything lines up nice and neatly.
+Phew.
+All right, any questions then on printf or more?
+Yeah.
+AUDIENCE: [? Would ?] the printf [INAUDIBLE]??
+DAVID J. MALAN: Short answer, yes. printf
+can handle more than one type of variable or value.
+%s is one.
+We're going to see %i is another for plugging in an integer.
+You can have multiple i's, multiple s's, and even other symbols too.
+We'll come back to that in just a little bit.
+printf can take many more arguments than just these two.
+This is just meant to be representative.
+Yeah, over here.
+Can you declare variables within the printf?
+No.
+The only variable I'm using right now is answer,
+and it's got to be done outside the context of printf in this case.
+Good question, we'll see more of that before long.
+Yeah, in back.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: How do we download the CS50 library?
+So we will show you in problems set 1 exactly how to do that.
+It's automatically done for you in our version of VS Code in the cloud.
+If, ultimately, you program on your own Mac or PC, either initially or later
+on, it's also installable online.
+But if you want to ask that via online or afterward,
+we can point you in the right direction.
+But PSet 1 will itself.
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: String is the type of the variable or, more properly,
+the data type of the variable.
+int is another keyword I alluded to earlier, I haven't used it yet.
+int, for integer, is going to be another type, or data type, of variable.
+AUDIENCE: OK. [? Thank you. ?]
+DAVID J. MALAN: Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Oh, good question.
+Could I go ahead and just plug in this function,
+kind of like we did in Scratch, getting rid of the variable altogether
+and just do this, which recall, is reminiscent of what
+I did in Scratch by plopping block on top of block on block?
+Am I answering that right?
+Can I put string in front of get_string?
+No.
+You only put the word string in front of a variable
+that you want to make string.
+And even though I'm apparently answering the wrong question,
+let me go ahead and zoom out, save this, do make hello again.
+Seems to compile OK.
+If I run ./hello, type in David, voila.
+That, too, works.
+And so, actually, let's go down this rabbit hole for just a moment.
+Clearly, it's still correct--
+at least, based on my limited testing.
+Is this better designed or worse designed?
+Let's open that question like we did last week.
+Yeah?
+Yeah, I kind of agree with that.
+Reasonable people could disagree, but I do
+agree that this seems harder to read because I start reading here,
+but wait a minute. get_string is going to get used first,
+and then it's going to give me back a value.
+So, yeah, it just feels like it was nicer to read top to bottom,
+I would say.
+Your thoughts?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+And so this is useful if I only want to print out the person's name once.
+If I want to use it later in a longer program, I'm out of luck,
+and so I haven't saved it in a variable.
+So I think, long story short, we could debate this all day long.
+But in this case, eh, if you can make a reasonable argument one
+way or the other, that's a pretty solid ground to stand on.
+But, invariably, reasonable people are going
+to disagree, whether first-time programmers or many years after that.
+So let's frame this one last example in the context of the same process
+of taking inputs and outputs.
+The functions we've been talking about all
+take inputs, otherwise now known as arguments, or parameters, pretty much
+synonymous.
+That's just the fancy word for an input to a function.
+And some functions have either side effects, like we saw--
+printing something, saying something on the screen,
+sort of visually or audibly--
+or they return a value, which is a reusable value, like name or answer,
+in this case.
+If we look then at what we did last time in the world of Scratch last week,
+the input was what's your name, the function was ask,
+and the return value was answer.
+And now let's take a look at this block, which is honestly a more user-friendly
+version of what we just did with the %s.
+Last week we said save, then join, then hello and answer.
+But the interesting takeaway there was not how to say hello anything.
+It was the fact that in Scratch 2, the output of one function,
+like the green join, could become the input to another function,
+the purple say.
+The syntax in C is admittedly pretty different,
+but the idea is essentially the same.
+Here, though, we have hello, a placeholder,
+but we have to, in this world of C, tell printf
+what we want to plug in for that placeholder.
+It's just different.
+But that's the way to do it.
+When we get to Python and other languages later in the term,
+there's actually easier ways to do this.
+But this is a very common paradigm, particularly when
+you want to format your data in some way.
+All right, let's then take a step back to where we began,
+which was with that whole program, which had the include
+and it had int main(void) and all of this other cryptic syntax.
+This Scratch piece last week was kind of like the go-to
+whenever you want to have a main part of your program.
+It's not the only way to start a Scratch program.
+You could listen for clicks or other things, not just the green flag.
+But this was probably the most popular place to start a program in Scratch.
+In C, the closest analog is to literally write this out.
+So just like last week, if you were in the habit of dragging and dropping
+when green flag clicked, as a C programmer,
+the first thing you would do is after creating an empty file,
+like I did with hello.c, you'd probably type int
+main(void) open curly brace, closed curly brace,
+and then you can put all of your code inside of those curly braces.
+So just like Scratch had this sort of magnetic nature
+to it where the puzzle pieces would snap together, C, as a text-based language,
+tends to use these curly braces, one of them opened, the other one closed.
+And anything inside of those braces, so to speak,
+is part of this puzzle piece, a.k.a.
+main.
+So what was atop them?
+We went down this rabbit hole moment ago with these things called header files,
+even though I didn't call them by this name.
+But, indeed, when we have a whole program in Scratch, super easy.
+Just have the one green flag clicked and then say hello, world.
+There's no special syntax.
+After all, it's meant to be very user-friendly and graphical.
+In C, though, you technically can't just put int main(void) printf hello, world.
+You also need this.
+Because, again, you need to tell the compiler to load the library--
+code that someone else wrote-- so that the compiler knows what printf even is.
+You have to load the CS50 library whenever
+you want to use get_string or other functions, like get_int,
+as we'll soon see.
+Otherwise, the compiler won't know what get_string is.
+You just have to do it this way.
+The specific file name I'm mentioning here,
+stdio.h, cs50.h, is what C programmers called a call a header file.
+We'll see eventually what's inside of those files.
+But long story short, it's like a menu of all of the available functions.
+So in cs50.h, there's a menu mentioning get_string, get_int,
+and a bunch of other stuff.
+And in stdio.h, there's a menu of functions, among which are printf.
+And that menu is what prepares the compiler
+to know how to implement those same functions.
+All right, let me pause here.
+Question.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Not quite.
+A library provides all of the functionality we're talking about.
+A header file is the very specific mechanism via which you include it.
+And we'll discuss this more next week.
+For now, they're essentially the same, but we'll discuss
+nuances between the two next week.
+Yeah, the library would be standard I/O. The library would CS50.
+The corresponding header file is stdio.h, cs50.h.
+Indeed.
+Other questions.
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Indeed.
+That, too, is on the menu.
+We'll come back to that.
+But the word string--
+incredibly common in the world of programming, it's not a CS50 idea--
+but in C, there's technically no such data type as string by default.
+We have sort of conjured it up to simplify the first few weeks.
+That's a training wheel that we'll very deliberately, in a few weeks,
+take away, and we'll see why we've been using get_string and string.
+Because C otherwise makes things quite more challenging early on,
+which then gets besides the point for us.
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yes.
+Early on, you will have to use whatever is prescribed by the specification.
+That will include CS50's functions.
+Long story short, you referred, I think, a moment ago to another function
+called scanf, we won't talk about for a few weeks.
+Long story short, in C, it's pretty easy and possible to get input from a user.
+The catch is that it's really easy to do it dangerously.
+And C, because it's an older, lower-level language, so to speak,
+that gives you pretty much ultimate control over your computer's hardware.
+It's very easy to make mistakes.
+And, indeed, that's too why we use the library,
+so your code won't crash unintendedly.
+All right, so with this in mind, we have this now mapping
+between the Scratch version and the other.
+Let me just give you a quick tour of some of the other placeholders and data
+types that students will start seeing as we assemble more interesting programs.
+In the world of Linux, here is a non-exhaustive list
+of commands with which you'll get familiar over the next few weeks
+by playing with problem sets.
+We've only seen two of these so far, ls for list, rm for others.
+But I mention them now just so that it doesn't
+feel too foreign when you see them on screen or online in a problem set.
+cp is going to stand for copy.
+mkdir is going to stand for make directory. mv is
+going to stand for move or rename.
+rmdir is going to be remove directory, and cd is going to be for change /
+and let me show you this last one here first,
+only because it's something you'll use so commonly.
+If I go back to my code here on the screen, I'm going to go ahead
+and re-open the little GUI on the left-hand side, the so-called Explorer,
+revealing that I've got two files, hello and hello.c
+so nothing has changed since there.
+Suppose now that it's a few weeks into class
+and I want to start organizing the code I'm
+writing so that I have a folder for this week or next week,
+or maybe a folder for problem set 1, problem set 2.
+I can do this in a few ways.
+In the GUI, I can go up here and do what most of you
+would do instinctively on a Mac or PC.
+You look for like a folder icon, you click it,
+and then you name a folder like PSet1, Enter.
+Voila, you've got a folder called PSet1.
+I can confirm as much with my command line interface by typing what command?
+How can I list what's in my folder?
+Yeah, so ls for list.
+And now I see hello--
+and it's green with an asterisk because that's
+my executable, my runnable program--
+hello.c, which is my source code, and now PSet1 with a slash
+at the end, which just implies that it's indeed a folder.
+All right, I didn't really want to do it that way.
+I'd like to do it more advanced.
+So let me go ahead and right-click on PSet1, delete permanently.
+I get a scary irreversible error message.
+But there's nothing in it, so that's fine.
+Now I've deleted it using the GUI.
+But now let me go ahead and start doing the same thing from the command line.
+And if you're wondering how things keep disappearing,
+if you hit Control-L in your terminal window or explicitly type clear,
+it will delete everything you previously typed just to clean things up.
+In practice, you don't need to be doing this often.
+I'm doing it just to keep our focus on my latest commands.
+If I do-- what was the command to make a new directory?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, so mkdir, make directory.
+Let me create PSet1, Enter.
+And notice at left, there's my PSet1.
+If I want to get a little overzealous, plan for next week,
+here's my PSet2 directory.
+Suppose now I want to open those folders on a Mac or PC or in this GUI,
+I could double-click on it like this, and you'd
+see this little arrow is moving.
+It's not doing anything because there's nothing in there, but that's fine.
+But suppose again I want to get more comfortable with my command line.
+Notice if I type ls now, I see all four same things.
+Let me change directories with cd space PSet1 Enter.
+And now notice two things will have happened.
+One, my prompt has changed slightly to remind me where I am,
+just to keep me sane so that I don't forget what folder I'm actually in.
+So here is just a visual reminder of what folder I'm currently in.
+If I type ls now, what should I see after hitting Enter?
+Nothing, because I've only created empty folders so far.
+And, indeed, I see nothing.
+If I wanted to create a folder called Mario for a program that might be
+called Mario this week, I can do that.
+Now if I type ls, there is Mario.
+Now if I do cd Mario, notice my prompt's going
+to change to be a little more precise.
+Now I'm in PSet1/Mario.
+And notice what's happening at top left.
+Nothing now, because these folders are collapsed.
+But if I click the little triangle, there I see Mario.
+Nothing's going on in there because there's no files yet.
+But suppose now I want to create a file called mario.c.
+I could go up here, I could click the little plus icon, and use the GUI.
+Or I can just type code mario.c.
+Voila.
+That creates a new tab for me.
+I'm not going to write any code in here yet, but I am going to save the file.
+And now at top left, you'll see that mario.c appears.
+So at some point, you can eventually just close the Explorer.
+Because, again, it's not providing you with any new information.
+It's maybe more user-friendly, but there's
+nothing you can't do at the command line that you could do with the GUI.
+All right, but now I'm kind of stuck.
+How do I get out of this folder?
+In my Mac or PC world, I'd probably click
+the Back button or something like that or just close it and start all over.
+In the terminal window, I can do cd dot dot.
+Dot dot is a nickname, if you will, for the parent directory.
+That is, the previous directory.
+So if I hit Enter now, notice I'm going to close the Mario folder,
+a.k.a. directory, and now I'm back in PSet1.
+Or, if I want to be fancy, let me go back into Mario temporarily.
+If I type ls, there's mario.c, just to orient us.
+If I want to do multiple things at a time, I could do cd../..
+which goes to my parent to my grandparent all in one breath.
+And voila, now I'm back in my default folder, if you will.
+And one last little trick of the trade, if I'm in PSet1/Mario like I
+was a moment ago, and you're just tired of all the navigation,
+if you just type cd and hit Enter, it'll whisk you
+away back to your default folder, and you don't have
+to worry about getting there manually.
+Recall a bit ago, though, that I was running hello as this, ./hello.
+If dot refers to my parent, perhaps infer here syntactically,
+what does a single dot mean instead?
+It means this directory, your current directory.
+Why is that necessary?
+It just makes super explicit to the computer
+that I want the program called hello that's installed here,
+not in some random other folder on my hard drive, so to speak.
+I want the one that's right here instead.
+All right, so besides these commands, there's
+going to be others that we encounter over time.
+Those are kind of the basics.
+That allows you to wean yourself off of a GUI, Graphical User Interface,
+and start using more comfortably, with practice and time,
+a command line interface instead.
+Well, what about those other types, now back in the world of C?
+Those commands were not C. Those are just command-specific to a command line
+interface, like in Linux, which, again, we're using in the cloud.
+It's an alternative to Mac OS and Windows.
+Back in the world of C now, we've seen strings, which are words.
+I mentioned int or integer, but there's others as well.
+In the world of C, we've seen string, we will see int.
+If you want a bigger integer, there's something literally called a long.
+If you want a single character, there's something called a char.
+If you want a Boolean value, true or false, there is a bool.
+And if you want a floating-point value--
+a fancy way of saying a real number, something with a decimal point in it--
+that is what C and other languages call a float.
+And if you want even more numbers after the decimal point that
+is more precision, you can use something called a double.
+That is to say, here is, again, an example in programming
+where it's up to you now to provide the computer with hints, essentially,
+that it will rely on to know what is this pattern of zeros and ones.
+Is it a number, a letter?
+Is it a sound, an image, a color, or the like?
+These are the types of data types that provide exactly those hints.
+What are the functions that come in the menu that is the CS50 library?
+We talked about standard I/O, and that's just one function so far, printf.
+In the CS50 library, you can see that it follows a pattern.
+The C50 library exists largely for the first few weeks
+of the class to make our lives easier when you just want to get user input.
+So if you want to get a string, like a word or words from the human,
+you use get_string.
+If you want to get an integer from the user, you're going to use get_int.
+When you want to get any of those other data types, for the most part,
+you use get_ something else.
+And they're indeed all lowercase by convention.
+What about printf?
+If we have the ability now to store different types of data
+and we have functions with which to get different types of data,
+how might you go about printing different types of data?
+Well, we've seen %s for string, %i for integer, %c for char,
+%f for a float or a double, those real numbers I described earlier,
+and then %li for a long integer.
+So here's the first example of inconsistencies.
+In an ideal world, that would just be %l and we'd move on.
+It's %li instead in this case.
+That's printf and some of its format codes.
+What more might we do?
+Well, in C, as we'll see--
+no pun intended-- there is a whole bunch of operators.
+And, indeed, computers, one of the first things they did
+was a lot of math and calculations, so there's a lot of operators like these.
+Computers, and in turn, C, really good at addition, subtraction,
+multiplication, division, and even the percent sign,
+which is the remainder operator.
+There's a special symbol in C and other languages
+just for getting the remainder, when you divide one number by another.
+There are other features in the world of C, like variables, as we've seen.
+And there's also what is of playfully called syntactic sugar that
+makes it easier over time to write fewer characters
+but express your thoughts the same.
+So just as a single example of this, as a single example,
+consider this use of a variable last week.
+Here in Scratch is how you might set a variable called counter to 0.
+In C, it's going to be similar.
+If you want the variable to be called counter,
+you literally write the word counter, or whatever you want it to be called.
+You then use the assignment operator, a.k.a. the equals sign,
+and you assign it whatever its initial value should be here on the right.
+So, again, the 0 is going to get copied from right to left into the variable
+because of that single equal sign.
+But this isn't sufficient in C. What else
+is missing on the right-hand side, instinctively now?
+Even if you've never programmed in this before.
+Yeah, in front.
+AUDIENCE: Semicolon.
+DAVID J. MALAN: A semicolon at the end.
+And one other thing, I think, is probably missing.
+Again.
+AUDIENCE: A data type.
+DAVID J. MALAN: A data type.
+So if we can keep going back and forth here,
+what data type seems appropriate intuitively for counter?
+int for integer.
+So, indeed, we need to tell the computer when
+creating a variable what type of data we want,
+and we need to finish our thought with the semicolon.
+So there might be a counterpart there.
+What about in Scratch if we wanted to increment that counter variable?
+We had this very user-friendly puzzle piece last time
+that was change counter by 1, or add 1 to counter.
+In C, here's where things get a little more interesting.
+And pretty commonly done, you might do this. counter = counter + 1;
+with a semicolon.
+And this is where, again, it's important to note, the equal sign,
+it's not equality.
+Otherwise, this makes no sense.
+counter cannot equal counter plus 1, right?
+That just doesn't work if we're talking about integers here.
+That's because the equal sign is assignment.
+So it can certainly be the case that you calculate
+counter plus 1, whatever that is, then you update the value of counter
+from right to left to be that new value.
+This, as we'll see, is a very common thing
+to do in programming just to kind of count upward, for whatever reason.
+You can write this more succinctly.
+This code here is what we'll call syntactic sugar, sort
+of a fancy way of saying the same thing with fewer words or fewer characters
+on the screen.
+This also adds 1, or whatever number you type over here,
+to the variable on the left.
+And there's one other form of syntactic sugar we're going to start seeing too,
+and it's even more terse than this.
+That too will increment counter by 1 by literally changing its value by 1.
+Or if you change it to minus minus, subtracting 1 from it.
+You can't do that with 2 and 3 and 4, but you
+can do it by default with just plus plus or minus minus adding or subtracting 1.
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Ah, so when you are changing a variable that already
+has been created, as we did with the code that looked like this,
+you no longer need to remind the computer what the data type is.
+Thankfully, the computer is at least as smart as that.
+It will remember the type of the data that you intended.
+Other questions or comments on this?
+All right, that's quite a lot.
+Why don't we go ahead and here take a 10-minute break?
+And we'll be back, we'll start writing some code.
+All right, so we are back.
+We've just looked at some of the basics of compiling,
+even if it doesn't quite feel that basic.
+But now, let's actually start focusing really
+on writing more and more code, more and more interesting
+code, kind of like we dove into Scratch last week.
+So here I have these code open.
+I've closed the GUI.
+I'm going to focus more on my terminal window and my code editors.
+Many different ways I can create new files, but I want to create something
+called a calculator.
+So, again, within this environment of VS Code,
+I can literally write the code command which is VS Code specific,
+and it just creates a new file for me automatically.
+Or I could do that in the GUI.
+I'm going to go ahead and create this file called calculator.c
+and I'm going to go ahead and include some familiar things.
+So I'm just going to go ahead and proactively include cs50.h, stdio.h.
+I'm going to go ahead from memory and do the int void main--
+more on that next week, why it's int, why it's void, and so forth.
+And now let me just implement a very simple calculator.
+We saw some mathematical operators, like plus and the like.
+So let's actually use this.
+So let me go ahead and first give myself a variable
+called x, sort of like grade school math or algebra.
+Let me go ahead then and get an int, which is new,
+but I mentioned this exists.
+And then let me just ask the user for whatever their x value is.
+The thing in the quotes is just the English, or the string
+that I'm printing on the screen. so I could say anything I want.
+I'm just going to say x colon to prompt the user accordingly.
+Now I'm going to go ahead and get another variable called y.
+I'm going to get int again.
+And now, I'm going to prompt the user for y.
+And I'm just very nitpickly using a space just
+to move the cursor so it doesn't look too messy on the screen.
+And then lastly, let me go ahead and just print out the sum of x and y.
+In an ideal world, I would just say something like printf x + y.
+But that is not valid in C. The first argument, recall, in printf
+has to be a string in double quotes.
+So if I want to print out the value of an integer,
+I need to put something in quotes here, maybe followed by a newline,
+if I want to move the cursor as well.
+So, again, we only glimpsed it briefly, but what
+do I replace these question marks with if I want a placeholder for an integer?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, so %i.
+Just like %s was string, %i is integer.
+So I change this %i.
+And now if I want to add x and y, for instance, super-- simple calculator,
+doesn't do much of anything other than addition of two integers--
+I think this works.
+And, again, it looks definitely cryptic at first glance.
+It would be if programming weren't this cryptic.
+Other languages will clean this up for us.
+But, again, if you focus on the basics, printf takes one input first--
+which is a format string with English or whatever language,
+some placeholders, maybe--
+then it takes potentially more arguments after the comma,
+like the value of x plus y.
+All right, let me go ahead now and make calculator,
+which, again, compiles my source code in C,
+pictured above, and converts it into corresponding machine
+code, or zeros and ones.
+No error messages.
+so that's already good.
+Now I do ./calculator.
+Let's do 1 plus 1 and Enter.
+Voila.
+Now I have the makings of a calculator.
+Now let's start to tinker with this a little bit.
+What if I instead had done this?
+int z = x + y and then plug-in z here.
+If I rerun make calculator, Enter, rerun ./calculator, type in 1 plus 1,
+still equals 2, and let me claim that it will work for other values as well--
+which of these versions is better designed?
+If both seem to be correct at very cursory glance, is this version better
+or is the previous one without the z?
+OK, so this one is arguably better because I've now got a reusable
+variable called z that I cannot only print but, heck,
+if my program is longer, I can use it elsewhere.
+Counterthoughts?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+Debatable, like before, because it depends on my intent.
+And, honestly, I think a pretty good argument
+can be made for the first version.
+Because if I have no intention of-- as you note--
+using that variable again, you know what?
+Maybe I might as well do this, just because it's
+one less thing to think about.
+It's one less distraction.
+It's one less line of code to have to understand.
+It's just a little tighter.
+So here, again, it does depend on your intention.
+But this field is pretty reasonable.
+And I think, as someone noted earlier, when
+I did the same thing with get_string, that, yeah, maybe kind of crossed
+s line because get_string and the what's your name inside of it,
+it was just so much longer.
+But x + y, eh, it's not that hard to wrap our mind around what's
+going on inside of the printf argument.
+So, again, these are the kinds of thoughts that hopefully you'll
+acquire the instinct for on not necessarily reaching
+the same answer as someone else, but, again, the thought
+process is what matters here.
+All right, so how might I enhance this program a little bit?
+Let's just talk about style for just a moment.
+So x and y, at least in this case, are pretty reasonable variable names.
+Why?
+Because that's the go-to variable names in math
+when you're adding two things together.
+So x and y seem pretty reasonable.
+I could have done something like, well, maybe my first variable
+should be called first number and my next variable
+should be called second number.
+And then down here, I would have to change this
+to first number plus second number.
+Like, eh, this isn't really adding anything semantically
+to help my comprehension.
+But that would be one other direction we could have taken things.
+So if you have very simple ideas that are conventionally
+expressed with common variable names like x and y, totally fine here.
+What if I want to annotate this program and remind myself what it is it does?
+Well, I can add in C what are called comments.
+With a slash slash, two forward slashes, you can write a note to yourself,
+like prompt user for x.
+And then down here, I could do something like prompt user
+for y, just to remind myself what I'm doing there.
+And down here, perform addition.
+Now, in this case, I'm not sure these commands are really
+adding all that much.
+Because in the time it took me to write and eventually read these comments,
+I could have just read the three lines of code.
+But as our programs get more sophisticated
+and you start to learn more syntax--
+that, honestly, you might forget the next day, the next week,
+the next month-- might be useful to have these notes to self that
+reminds you of what your code is doing or maybe even
+how it is doing that thing.
+With these early programs, not really necessary,
+doesn't really add all that much to our comprehension,
+but it is a mechanism you have in place that
+can help you actually remind yourself or remind someone
+else what it is that's going on.
+Well, let me go ahead and rerun this again in this current version,
+make calculator.
+And here, too, you might think I'm typing crazy fast--
+not really.
+I'm hitting Tab a lot.
+So it turns out that Linux, the operating system
+we're using here in the cloud--
+but, actually, Windows and Mac OS nowadays support this too--
+supports autocomplete.
+So if you only have one program that starts with C-A-L,
+you don't have to finish writing calculator, you can just hit Tab,
+and the computer will finish your thought for you.
+The other thing you can do is if you hit Up and keep going up,
+you'll scroll through your entire history of commands.
+So there too, I've been saving some keystrokes
+by hitting Up quickly rather than retyping the same darn thing again
+and again.
+So, again, just another little convenience
+to make programming and interacting with the command line interface even faster.
+All right, let me go ahead and just make sure it's compiled in the current form.
+The comments have no functional impact.
+These green things are just notes to self.
+Let me run calculator with maybe-- how about this?
+Instead of 1 plus 1, how about 1 billion--
+whoops, let's do that again.
+Wa, da, da.
+1 million, 1 billion, and another 1 billion, and that answer is 2 billion.
+All right, so that seems correct.
+Let's run this program one more time.
+How about 2 billion plus another 2 billion?
+Did you know that?
+So, apparently, it's not so correct.
+And, clearly, running 1 plus 1 was not the most robust testing of my code
+here.
+What might have gone wrong?
+What might have gone wrong?
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+The computer probably ran out of space with bits.
+So it turns out with these data types-- we've been talking about string and int
+and also float and char and those other things-- they all use a specific,
+and, most importantly, finite number of bits to represent them.
+It can vary by computer.
+Newer computers use more bits, older computers tended to use fewer bits.
+It's not necessarily standardized for all of these data types.
+But in this case, in this environment, it is using 32 bits for an integer.
+That's a lot.
+So with 32 bits, you can count pretty high.
+This is 64 light bulbs on the stage and could count even higher.
+An int is only using half of these, or we have two integers here on the stage.
+Now, if you think back to last week, we talked about 8 bits at one point.
+And if you have 8 bits, 8 zeros and ones, you can count as high as 256--
+just a good number to generally remember as trivia.
+8 bits gives you 256 permutations of zeros and ones.
+32 gives you roughly how many, if anyone knows?
+It's 2 to the 32 power.
+So it's roughly 4 billion, 2 to the 32.
+If you don't know that, it's fine.
+Most programmers, though, eventually remember these kinds of heuristics.
+So it's roughly 4 billion.
+So that feels like enough.
+2 billion plus 2 billion is exactly 4 billion.
+And that actually should fit in a 32-bit integer.
+The catch is that my Mac, your PC, and the like
+also like to support negative numbers.
+And if you want to support both positive and negative numbers, that technically
+means with 32-bit integers, you can count as high
+as roughly 2 billion positive or 2 billion negative
+in the other direction.
+That's still 4 billion, give or take, but it's only half as many
+in one direction or the other.
+So how could I go about implementing a correct calculator here?
+What might the solution be?
+Yeah, so not just li, which was for long integer.
+I have to make one more change, which is to the data type itself.
+So let me go back up here and change x from an int to a long, a.k.a.
+long integer.
+And then let me change y as well.
+And then let me change the format code per the little cheat sheet we had up
+a few minutes ago to li.
+Let me recompile the calculator--
+seems to work OK.
+Let's rerun it.
+Now let's do 1 plus 1.
+That's should obviously be the same.
+Now let's do 2 billion and another 2 billion
+and cross our fingers this time.
+Now we're counting as high as 4 billion.
+And we can go way higher than 4 billion, but we're only
+kicking the can down the street a bit.
+Even though we're now using--
+with a long--
+64 bits, which is as long as this stage now, that's still a finite value.
+It might be a really big value, but it's still finite.
+And we'll come back at the end of today to these kinds
+of fundamental limitations.
+Because arguably now, my calculator is correct for like millions,
+billions of possible inputs but not all.
+And that's problematic if you actually want
+to use my calculator for any possible inputs, not just
+ones that are roughly less than, say, 2 billion, as in this case.
+All right, any questions then on that?
+But it's really just a precursor for all the problems
+that we're going to have to eventually deal with later on.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: A good question.
+Yes.
+If we were still using z, we would also have to change it to a long.
+Otherwise, we'd be ignoring 32 of the bits that
+had been added together via the longs.
+Good question.
+All right, so how about we spice things up with maybe not just addition here,
+how about something with some conditions?
+Let's start to ask some actual questions.
+So a moment ago, recall that we had just the declaration of variables.
+Now let's look back at something in Scratch that
+looked a little something like this, a bunch of puzzle pieces
+asking questions by way of these conditionals
+and then these Boolean expressions here in green, maybe saying something
+like x is less than y.
+In C, this actually maps pretty cleanly.
+It's much cleaner from left to right than it was with printf and join.
+Here, we have just code that looks like this.
+If, a space, two parentheses and then x less than y,
+and then we have something like printf there in the middle.
+So here, it's actually kind of a nice mapping.
+Notice that, just as the yellow puzzle piece in Scratch
+is kind of hugging the purple puzzle piece,
+that's effectively the role that these curly braces are playing.
+They're sort of encapsulating all of the code on the inside.
+The parentheses represent the Boolean expression
+that needs to be asked and answered to decide whether or not to do this thing.
+And here's an exception to what I alluded to earlier.
+Usually, when you see a word and then a parenthesis, something,
+and then closed parenthesis, I claimed that's usually a function.
+And I'm still feeling pretty good about that claim.
+But there are exceptions.
+And the word if is not a function.
+It's just a programming construct.
+It's a feature of the C language that similarly uses parentheses, just
+for different purposes for a Boolean expression.
+How about something like this?
+Last week, if you wanted to have a two-way fork in the road,
+go this way or that way, you can have if and else.
+In C, that would look a little something like this.
+And if we add in the printf's, it now looks quite like the same,
+but it adds, of course, the word else and then a couple of more curly braces.
+As an aside, in C, It's not strictly necessary to have curly braces
+if you have only one line of code indented underneath.
+For best practice, though, do so anyway, because it makes super clear to you
+and ultimately anyone else reading your code
+that you intend for just that one or more line of code to execute.
+How about this from last week?
+Here was a three-way fork in the road.
+If x is less than y, else if x is greater than y, else if x equals y.
+Now, here's where you have some disparities between Scratch
+and C. Scratch uses an equals sign for equality, to compare two values.
+C uses a single equals sign for assignment from right
+to left, minor difference between the two worlds.
+In C, we could implement the same code like this, the addition being
+just this additional else if.
+And if we add in the printf's, it looks a little something now like this.
+This is correct both in the Scratch world and in the C world.
+But could someone make a claim that this is not, again, well-designed?
+Exactly.
+We don't need the last if.
+We need the else, at least, but we don't need the last if.
+Because, at least in the world of comparing integers,
+it's either going to be less than, greater than, or equal to.
+There is no other case.
+So you can save a few seconds, if you will,
+of your program running-- a blink of the eye-- by only asking two questions
+and then inferring what the answer to the third
+must be just by nature of your own human logic here.
+Now, why is that a good thing?
+If, for instance, x and y happen to equal each other--
+I type in 1 and 1 for both values, either in Scratch or in the C world--
+in the case of this version, you're sort of stupidly
+asking three questions, all of which are going to get asked
+even though the answer is no, no, yes.
+That is false, false, true.
+That seems to be unnecessary because if we instead optimize this code,
+get rid of the unnecessary if and just do as you proposed logically--
+else print that x is equal to y--
+now if x indeed equals y because they're both 1 or some other value,
+now you're only going to ask two questions, so 2/3 as many questions,
+and then you're going to get your same correct result.
+So, again, a minor detail, but, again, the kinds of things
+you should be thinking about, not only as
+you write your code to be correct but also write
+it to be well-designed as well.
+All right, so why don't we go ahead and translate this
+into the context of an actual program here?
+I'll create a blank window here.
+And let's do something with points, like points on my own very first CS50
+problem set.
+Let me go ahead and run code of points.c.
+That's just going to give me a new text file.
+And then up here, I'm going to do my usual, include cs50.h.
+include stdio.h.
+int main void.
+So a lot of boilerplate, so to speak, in these early programs.
+And now, let's see.
+Let's ask the user, how many points did they
+lose on their most recent CS50 PSet?
+So sort of evoke my photograph of my own very first PSet last week
+where I lost a couple of points myself.
+So int points = get_int.
+Then I'll ask a question in English like, how many points did you lose,
+question mark, space?
+And then once I have this answer, let's now ask some questions of it.
+So if points is less than 2--
+borrowing the syntax that we saw on the screen a moment ago--
+let's go ahead and print out something explanatory
+like you lost fewer points than me, backslash n.
+else if points greater than 2--
+which is, again how many I lost--
+I'm going to go ahead and print out you lost more points than me, backslash n.
+else if-- wait a minute, else seems to be sufficient logically here.
+I'm just going to go ahead and print out something
+like you lost the same number of points as me, backslash n.
+So, really, just a straightforward application of that simple idea
+but to a concrete scenario here.
+So let me go ahead and save this.
+Let me go ahead and run make points, Enter.
+No errors, that's good.
+Run points.
+And then, how many points did you lose?
+How about, it's 1 point?
+All right, you lost fewer points than me.
+How about 0 points?
+Even better.
+How about 3 points?
+And so forth.
+So, again, we have the ability to express in C now pretty basic idea
+from last week in reality, which is this notion of conditionals and asking
+questions.
+There's something subtle here, though, that's maybe not super well-designed
+that someone might call a magic number.
+This is programming speak for something I've done here.
+There's a bit of redundancy unrelated to the if and the else and the else.
+But is there something I typed twice just to ask, perhaps, for the obvious?
+Exactly, I've hard-coded, so to speak, manually typed out the number 2--
+in two locations, in this case--
+that did not come from the user.
+So, apparently, once I compile this, this is it.
+You're always comparing yourself to me in like, 1996,
+which for better or for worse, is all the program can do.
+But this is an example too of a magic number in the sense
+like, wait, where did that 2 come from, and why is it in two places?
+It feels like we are setting the stage for just a higher probability
+of screwing up down the road.
+Because the longer this code gets, suppose I'm comparing against 2 points
+elsewhere--
+2, 3, 4, 5 places--
+am I going to keep typing the number 2?
+Like, yeah, that's fine.
+It's correct.
+It's going to work.
+But, honestly, eventually, you're going to screw up,
+and you're going to miss one of the 2's, you're going to change it to a 3,
+because maybe I did worse the next year, or 1, I did better.
+And you don't want these numbers to get out of sync.
+So what would be a logical improvement to this design,
+rather than hard-coding the same number sort of magically
+in two or more places?
+Yeah, why don't I make a variable that I can use in there?
+So, for instance, I could create a variable
+like this, another integer called mine.
+And I'm just going to initialize it to 2.
+And then I'm going to change mentions of 2 to this.
+And mine is a pretty reasonable name for a variable insofar
+as it refers to exactly whose points are in question.
+There's a risk here, though, minor though it is.
+I could accidentally change mine at some point.
+Maybe I forget what mine represents, and I do some addition or subtraction.
+So there's a way to tell the computer "don't trust me,
+because I'm going to screw up eventually"
+by making a variable constant too.
+So a constant in a programming language--
+this did not exist in Scratch--
+is just an additional hint to the computer that essentially enables
+you to program more defensively.
+If you don't trust yourself necessarily to not
+screw up later, or honestly, in practice,
+if you know that number should never change, make it constant
+and never think about it again.
+This tells the compiler to make sure that even you later in your code cannot
+change the number 2.
+And another convention in C and other languages, when you have a constant,
+it's often common to just capitalize the variable.
+Kind of like you're yelling, but it really just
+visually makes it stand out.
+So it's kind of like a nice rule of thumb
+that helps you realize, oh, that must be a constant.
+Capitalization alone does not make it constant.
+The word const does.
+But the capitalization is just a visual reminder
+that this is somewhere, somehow a constant.
+So just a minor refinement, but, again, we're
+sort of getting better at programming just by instilling
+these kinds of heuristics.
+Questions, then, on conditionals in C or these constants?
+Yeah.
+AUDIENCE: Why do you not use semicolons after line 9 and line 13?
+DAVID J. MALAN: Yeah, why do you not use a semicolon in lines 9, 13?
+Just because.
+This is the way the language was designed.
+And it's confusing early on.
+Generally speaking, when you're using conditionals-- and eventually,
+we'll see loops--
+there's no semicolons involved.
+For now, assume that semicolons usually finish your thought after a function.
+That's not 100% reliable of a heuristic, but it'll get you most of the way
+there.
+And just because.
+Left hand was not talking to the right hand when some of these languages
+were designed.
+All right, so let's do something else.
+How about this?
+If I have the ability to ask something conditionally--
+is this thing true or is this other thing--
+could I write a very simple program that does something basic like,
+tells me if a number the human types is even or odd?
+Well, let me just get the framework for that in place.
+Let me go ahead and write code of a parity--
+is a fancy way of saying even or odd.
+And let me go ahead and include cs50.h, include stdio.h, int main void--
+again, more on those down the road.
+But, for now, I'm going to go ahead and get a number n from the user
+by calling get_int and asking them for whatever n is.
+And then now I'm going to introduce some pseudocode.
+So here's the first example of a program,
+honestly, that I'm not really sure how to proceed.
+So let me just resort to some pseudocode using comments.
+Eventually, I'll get rid of this and write actual code.
+But if n is even, then print--
+actually, let me just print that.
+Let me just go ahead and say printf, quote unquote, "even",
+because I know how to use printf.
+else-- all right, I know how to printf odd,
+so let me just say printf, quote unquote, "odd".
+So here, I've sort of taken a bite out of the problem, if you will.
+And let me go ahead and put in my little placeholders.
+I want to do some kind of conditions.
+So if, question marks now, let me go ahead and fill in the blanks here.
+else I'll put this here.
+So I think I'm OK now.
+I'm getting closer to solving this.
+But I still have this question mark here.
+How, using syntax we've seen, might I determine if n is even or odd?
+What do you think?
+Nice.
+There's this little operator I mentioned by name earlier, the remainder
+operator, that will let you do exactly that.
+If you divide any number by 2, that mathematical heuristic
+is going to tell you if it's even or odd based on whether there's
+a remainder of 0 or 1.
+And that's nice because the alternative would seem to be doing something stupid
+like if n == 0 or if n equals 2 or n equals 4--
+your code would be infinitely long if you had to ask all possible questions.
+But if I do n divided by 2 and look at the remainder--
+it's a little cryptic, but this will indeed do the trick.
+So the percent sign is the remainder operator.
+It does numerator divided by denominator and returns not the result of that
+but, rather, the remainder of that.
+So if you divide anything by 2, it's going to be a 0 or 1 remainder.
+And if, indeed, 2 divides into n evenly, giving you 0,
+then you're going to print even.
+Else, it's got to be odd.
+But there is something odd-- pun intended-- in this highlighted line.
+What is another new piece of syntax, apparently, besides the percent sign?
+What's a little off there?
+Yeah.
+Yeah, so that's not a typo.
+And I even caught myself verbally saying it a moment ago,
+just because it's so ingrained.
+What must this mean here?
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, if something's equivalent to the other.
+So now this is the equality operator.
+It's not assignment from right to left.
+And this one too is an example of, literally,
+humans not really planning ahead, perhaps, left hand
+not talking to right hand in that someone decided,
+let's use the equals sign for assignment.
+And then some number of minutes or days later, people are like, damn,
+how do we now compare for equality?
+Well, let's just use two.
+And if you think this is a little weird, in some languages, like JavaScript,
+there's a third version where you use three equal signs.
+So, again, it's humans that design these languages.
+So if you're ever frustrated by them, confused by them, eh, admittedly,
+it might just not have been the best design.
+But we just kind of have to live with it ever since.
+So let me go ahead and zoom out here.
+Let me go ahead and make parity here.
+So make parity-- and, again, parity is just the name of my file, parity.c.
+./parity, type in a number like 2.
+That's indeed even.
+4, that's indeed even.
+3, that's indeed odd, and so forth.
+If we continue testing, presumably, we'll get the same kinds of answers.
+How about something else?
+Let me go ahead now and let me start copying and pasting some of this code
+because, admittedly, it's getting a little tedious to keep typing out
+all of that boilerplate at the top.
+Let me create a program called agree.c that's
+reminiscent of any of those forms you have
+to agree to online with a checkbox or typing in yes or no or the like.
+So let me throw away all the guts of this main program
+and now ask something like this.
+Let me go ahead and prompt user to agree to something.
+I'm going to go ahead and say, how about get_string do you agree--
+whatever the question might be-- and I want the human to type y or n
+for yes or no, respectively.
+So if it's only a single character, actually, I
+can actually get by with just get_char.
+Not used it before, but it was on our menu
+of functions from the CS50 library.
+And if I want to get the user's response,
+the return value should be a char also on the left.
+So now we've seen strings, ints, and now chars,
+if we only care about a single letter.
+And now let's go ahead, check whether user agreed.
+So how about if c == "y", then let me go ahead and, inside of my curly braces,
+print out agreed or some such sentence like that.
+else if they did not type c-- or you know what?
+Let's be explicit here, just so they can't
+type z or b or some random letter.
+else if c=="n" n for no, then let me go ahead and print out not agreed,
+or something like that.
+And I'm just going to ignore the user if they don't cooperate
+and they type z or b or something that's not y or n.
+All right, let me go ahead now and compile this code, make agree, ./agree.
+All right, do I agree?
+Yes.
+Let's go with the default. OK, so that seems to work.
+No, I don't agree this time.
+That seems to work.
+How about my caps lock key is on or I'm just really yelling, capital Y?
+It ignores me.
+Capital N, it ignores me.
+So, obviously, a bug, at least if I want to tolerate uppercase and lowercase,
+which is kind of reasonable.
+So what would be the possible solutions here, do you think?
+How do I solve this and tolerate both capital and lowercase?
+Maybe what's the simplest, most naive implementation?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, so why don't I just ask two questions?
+Or you know what, even more simplistic based only on what we've seen before--
+if you will, let me just copy and paste some of this code.
+Change this to an else-- whoops, not in caps-- else if "Y".
+And then I bet I could do the same thing with n.
+But here too, just like with Scratch, as soon
+as you start to find yourself copying and pasting,
+you're probably doing something wrong.
+And what you said verbally, if I may, was actually better.
+Because you're implying that I could just say something like OR c == "Y"
+or, down here, c == "N".
+The catch is, you can't use the word OR in C. It's actually two vertical bars.
+So you can express one question or another.
+You only need one of the answers to be yes or true,
+and you use two vertical bars.
+By contrast, just so you've seen it, if you
+wanted to check if something is equal to something AND something else,
+you could use two ampersands.
+This logically would make no sense here, though.
+Certainly, what the human typed can't both be lowercase and uppercase.
+That just makes no sense.
+So in this case, we do want OR.
+But that allows me to tighten my code up.
+I don't have to start copying and pasting whole branches.
+I can now ask two questions at once.
+Questions, then, on this variation?
+Really good question.
+Can you convert the input to all lowercase?
+Absolutely, you could.
+We don't have the capability yet.
+It turns out that's going to require--
+to be easy, another library, though we could do it
+ourselves knowing a little bit about ASCII or Unicode from last week.
+But, yes, that would be an alternative, but more on that a different time.
+Other questions?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Good question.
+Unfortunately, you have to be explicit in C. You can't just say this,
+even though that's kind of how you might think about it.
+You have to ask a complete question using the equality sign twice
+in this case.
+Let me ask a question now too.
+It's not a typo.
+I deliberately used single quotes around all of my single letters here.
+Why might that be?
+Previously, we used double quotes for anything that looked like text.
+Yeah.
+Correct, string is double quotes for multiple characters-- or even one,
+technically, but yes.
+And single quotes for single characters.
+Because my data type is different.
+I chose the simple route of just using a single char.
+In fact, this program won't work with Y-E-S
+or N-O. That's not supported at the moment-- more on that another time.
+I had to use single quotes because that's how C does it.
+If you're dealing with single characters,
+a.k.a. chars, use single quotes.
+If it's a string--
+even if it's one single character in a string
+as though you're starting to write out a longer word or sentence--
+that would be double quotes.
+And we'll see why this is before long too.
+But, again, just things to keep in mind whenever writing code
+in this particular language.
+Yeah, down here.
+So, short answer, if I'm understanding correctly, this would be incorrect.
+And this would be even more incorrect.
+But if you don't mind, let me kick the can a couple of weeks
+on this as to why this doesn't work.
+The most pleasant way to do this would indeed be to do something like this.
+But even this is a slippery slope, because what
+if the user does something weird, like they capitalize just the Y?
+You can imagine this getting messy quickly.
+I like your idea earlier about just forcing everything
+to lowercase just to standardize things.
+Unfortunately, you cannot compare strings for equality like this
+for, again, reasons will come to before long.
+So for today, we're keeping it simple, even though, arguably, it's
+not nearly as user-friendly to only tolerate individual letters.
+And there's a question over here.
+On the US English keyboard it's shift and then
+the backslash key above Return, but depending on your keyboard,
+it will vary.
+All right, so let's actually now look back
+at something we did a little bit of last week.
+Let me go ahead and open a file called meow.c,
+because, recall, that's what we had Scratch do initially.
+Let me include not the C50 library this time,
+but just stdio.h because I only want printf for this demo.
+Let me go ahead now and just print out meow.
+And then if I want the cat to meow three times, like it did last week,
+meow, meow, meow.
+Save it.
+make meow, ./meow.
+Voila.
+The program is written-- correct, I claim.
+It ran.
+It compiled OK.
+But, again, this was the beginning of our conversation
+last week of not being particularly well-designed.
+And if someone wants to maybe point out the now obvious,
+why is this not well-designed, necessarily?
+Yeah, it's just repetition, right?
+Again, I literally resorted to copy-paste.
+That should be the signal that you're probably
+doing something wrong or, at best, just lazy of you, in this case.
+So the solution, as you might glean from last week,
+is probably going to be one of those things called loops.
+So let's just take a look at some of the syntax for loops in C.
+But, again, no new ideas, it's just some new syntax
+that'll take some getting used to.
+In Scratch, if you wanted to meow forever with something like this,
+there's not a forever keyword in C, so this one's a little weird to look at.
+But this is the best we can do.
+It turns out there is a keyword called while in C.
+And that kind of has the right semantics,
+because it's like while I do something again and again,
+that's the best I can do.
+But just like an if condition or an else if condition,
+those took a Boolean expression in parentheses,
+a while loop also takes a Boolean expression in parentheses.
+So I have to ask a question.
+Now, if I want to do something forever, I could kind of stupidly just
+say while 2 is greater than 1, while 3 is greater than 2,
+or just something completely arbitrary.
+But that should rub you the wrong way, because like, why 2 versus 1?
+Why 3-- if you want true, just say true.
+So it turns out in C, there are special keywords, true and false,
+that are literally true and false, respectively.
+I could also put the number 1 for true and the number 0 for false,
+but most people would just say true to be explicit.
+So it's a little hackish, if you will, but very conventional.
+There's no forever keyword in C. If I want to then print meow forever,
+I'm going to just use something like printf here.
+So, again, not perfect translation from one
+to the other, but absolutely possible in C. What about this?
+This is a little more common if you want to do something
+a finite number of times, like repeat 3.
+There's a few different ways we can do this in C. Here's one approach.
+And here's where C-- like a lot of text-based languages,
+you kind of have to whip out that toolkit of all of the basic building
+blocks and think about, all right, how can I
+build a little machine in software that does something some number of times?
+Well, let me give myself a variable called counter, set it equal to 0.
+Let me create a loop whose Boolean expression is counter less than 3,
+the idea being here, why don't I just kind of count 1, 2, 3?
+So how do I implement this physicality in code?
+I give myself a variable, set it to 0, 0 fingers up.
+Now, I ask the question, is counter less than 3?
+If so, go ahead and print out meow.
+And just intuitively, even if you've never seen C code or any code
+before Scratch, what more do I need to do?
+I've left room here for one more line of logic.
+Yeah.
+We have to increase counter.
+So I need code like I showed earlier, like counter equals counter plus 1.
+And so here's where programming sometimes
+becomes a bit more like plumbing.
+You can't just say what you mean, like you couldn't Scratch.
+You have to build a little sort of software machine
+that initializes a value, does something, increments it, checks it.
+And so it's kind of like this software-based machine,
+but together, that's just using some familiar building blocks.
+But this is pretty common.
+Just like in Scratch, you might have used loops a bunch
+of times, pretty common in C.
+So can we tighten this code up?
+This is correct, but here are some conventions that are popular.
+If you're going to count, just say i.
+A convention in programming-- with, at least,
+languages like C-- is just use i as an integer if all its purpose is
+is to count from like, 0 on up.
+Counter is not wrong.
+It's not bad.
+It's just more verbose than you need to be.
+Just call it i.
+You don't need more semantics than that.
+All right, what else can I do here?
+There's another opportunity to tighten up this code.
+Do you recall?
+Yeah.
+Yeah, that syntactic sugar that does nothing new,
+but it does it more succinctly.
+I can change this to either the intermediate format or even tighter
+format of just i++.
+Now, this is pretty canonical.
+This is how most people would implement something
+three times using a loop in C--
+using a while loop, that is.
+Turns out that it's so common in C and other languages
+to do something finitely many times, there's a couple of ways to do it.
+In this model, to be clear, the logic, though,
+is that we start by initializing the variable, like I've highlighted here.
+We then ask the question, is i less than 0?
+If so, everything that's indented inside the curly braces
+gets executed-- namely, meow then the update.
+Then the computer is going to have to recheck the condition
+to make sure that i hasn't gotten so big that it's greater than 3.
+But if not, it then does this again and it does this again.
+And then it repeats, constantly checking the condition
+and executing what's in the block, checking the condition
+and executing what's in the block.
+After three times of that, the condition is going to be false, or a no answer,
+and that's it for the code.
+It just proceeds to whatever's down here, just like with Scratch.
+It jumps to the next blocks down below.
+All right, what's another way, though, to do this?
+Well, I've deliberately been counting from 0--
+and that's a programming convention, right?
+We started last week with all the light bulbs off, which was 0.
+So it's pretty reasonable to start counting at 0's, just
+like you would here.
+Like, no fingers are up, this is 0--
+fingers on your hand.
+But if you prefer, you could start counting at i equals 1.
+But then you don't want to do it while i is less than 3,
+you want to do i is less than or equal to 3.
+On most keyboards, there's no symbol for less than or equal to or greater than
+or equal to, so in C, you use two characters, less than
+and then an equals sign with no spaces in between.
+That just means less than or equal to.
+We could change it to set i to 2 and make this condition be less than
+or equal to 4.
+We could make this be a 10 and less than or equal to 12.
+But, again, just stick with the basics.
+Start at 0 and count on up would be the convention.
+Or if you prefer to count down, that's fine too.
+Set i to 3 and then do this so long as i is greater than 0,
+but you have to decrement instead of increment.
+So, again, we could do this all day long.
+There's literally an infinite number of ways to implement this idea.
+And that's why I keep emphasizing convention.
+Call the variable i for something like this,
+initialize it to 0 for something like this, and just generally count up,
+unless you really prefer to count down.
+Again, just certain human conventions.
+All right, how about another way to do this?
+This is what's called a for loop in C, also very common.
+It's not quite as straightforward in that it doesn't really read top
+to bottom in exactly the same way.
+This kind of has a lot more logic tucked into its first line.
+But it does exactly the same thing.
+What happens here is--
+notice that inside the parentheses, next to the word for,
+there's two semicolons-- which is another weird use of syntax.
+They're not at the end of the line, now they're
+in the middle of the parentheses.
+But that's what the humans chose years ago.
+The first thing before the semicolons initializes your variable, int i = 0.
+The next thing is the condition that's going to constantly get
+checked every cycle through this loop.
+And the last thing is going to be what you do after each loop, which
+in this case is going to be count up.
+So, again, if I rewind we initialize i to 0.
+We then ask the question, is i less than 3?
+If so, execute what's inside of the loop.
+Then the computer does this, it does the update, incrementing i by 1.
+And then it's not going to blindly meow again.
+It's going to check again the condition, is i less than 3?
+Then it's going to meow if so.
+Then it might go ahead and increment i and check the condition again.
+So, again, this does not read quite the same simple fashion top to bottom.
+You kind of read it left to right and then jump around.
+But, again, the initialization, the constant Boolean expression
+being checked, and the update after each time
+does the exact same thing as what we saw a moment ago in this while loop format.
+Which one is better?
+Eh, they're the same.
+I think most people would probably eventually use
+a for loop once comfortable, but just because is really the answer there.
+All right, any questions, then, on loops as we've translated them to C?
+Yeah.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: A for loop and while loop
+can both be used to do exactly the same thing.
+There are subtle differences with issues of scope,
+which we'll discuss before long, where when you
+create a variable in a for loop--
+notice that it was, again, inside of those parentheses, which
+technically means it's only going to exist in these four lines of code.
+By contrast, with the while loop, I declared my variable outside
+of the loop.
+That variable is going to continue to exist elsewhere in my program.
+So that's one of the minor differences there.
+Good question.
+But you'll see some others over time.
+All right, so we claim then that it's better in some form
+to do this with loops.
+So let's actually jump back to the code.
+Let me go ahead and now re-implement meowing with a for loop, for instance.
+So how about for int i = 0, i less than 3, i++.
+Then inside my curly braces, let me go ahead and print out with printf, meow,
+with a newline and a semicolon.
+So I did it pretty quickly just because I've long acquired the muscle memory.
+But if I now make meow, no errors there.
+Run ./meow.
+And I see meow, meow, meow.
+Well, let's do now what we did last week, which
+was to begin to make our own custom functions, if you will,
+by using our own in C. So here's where the syntax gets a little funky,
+but we'll explain over time what each of these keywords is doing.
+If I want to create a function called meow--
+because the authors of C did not create a function called meow decades ago--
+I need to give it a name, like meow.
+I need to specify if it takes any inputs.
+For now, I'm going to say no.
+And I'm going to explicitly say no by writing the special word void.
+It's also necessary when implementing a function in C--
+which was not necessary in Scratch--
+to specify what its return type is.
+But for now, I'm just going to say that meow is the name of the function,
+it takes no inputs--
+and that's what the void in parentheses means--
+and it does not return anything like ask did,
+or like get_string or get_int does.
+meow's purpose in life is just to have side effects, visual side effects
+by printing something on the screen.
+So what is meow going to do?
+I'm going to have it quite simply say printf,
+quote unquote, "meow", backslash n.
+And now, just like in Scratch, I can now just call
+a brand new function called meow.
+And here's where too, if you really don't like the curly braces,
+technically speaking, you can get rid of them when there's
+only one line of code inside your loop.
+But, again, stylistically, I would encourage
+you to preserve them to make super clear to yourself and others
+what it is that's going on.
+Let me go ahead and save this and do make meow.
+Whoops.
+Darn.
+All right, what did I do?
+Something stupid.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, so 0 does not belong there.
+I meant to hit parenthesis.
+So let me rerun make meow.
+OK, fixed.
+My mistake.
+All right, it's still working OK.
+But recall what I did in Scratch, kind of out of sight, out of mind.
+And just to make a point, let me just highlight this and move it
+way down in the file.
+Because, again, now that meow exists, it's an abstraction.
+I just know a meow function exists.
+I want to be able to use it.
+So let me scroll back up.
+My main function is the same.
+Let me go ahead and make meow again.
+And now, just by moving that function, I've created all these lines of errors.
+And let's look at the first.
+Again, the rule of thumb here-- it's a little small,
+but it says meow.c in bold-- which is the name of the file where the bug is--
+5 is the line number, and 20 is the character.
+So line number is enough alone.
+Let's see.
+Oh, this is what happens when I scrolled up too far.
+Sorry.
+This is the error we're now looking at, line 7.
+I was looking at the old error message from earlier before I fixed the 0.
+meow.c line 7.
+All right, apparently, C does not know what the meow function is.
+Implicit declaration of function meow is invalid in C99.
+Well, what does that mean?
+Declaration of function means your creation of a function.
+Like, I'm declaring that meow exists, but I haven't apparently
+defined it yet.
+And then C99 is the version of C from the year 1999,
+which we generally use here, it's one of the more recent versions.
+So why is that the case?
+Can you infer from the mere fact that I just moved meow to the bottom
+of the file-- which was fine in Scratch but now is bad--
+why is that?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, C is just kind of old school.
+It reads your code top to bottom.
+And if it does not know what meow is when you first try to use it,
+it just freaks out and prints out these error messages.
+So the solution is, quite simply, don't do that, just leave it where it was.
+But you can imagine this getting a little annoying over time, if only
+because main is, by name, the main part of your program.
+And, honestly, it would just be nice if main were always
+at the top of your code.
+Because if you want to understand what a file is doing,
+it makes sense to just read it top to bottom.
+Well, there is a solution to this.
+You can put functions in different orders with main at the top so long
+as you-- and this is perhaps the only time copy paste is appropriate--
+so long as you leave a little breadcrumb for the compiler
+at the very top of your file that literally
+repeats the return value, the name, and the arguments
+to that function, semicolon.
+This is, so to speak, declaring your function--
+and the real fancy way is this is a prototype.
+It's like, what is this thing going to look like?
+But the semicolon means I'm not going to deal with this yet.
+I'm going to actually define the function
+or implement it down below here.
+This is kind of a stupid detail.
+More recent languages get rid of this need,
+you can put your functions in any order.
+But, again, if you just think about the basics
+of programming languages like this one here--
+and as you noted--
+it must just be reading your code top to bottom.
+So annoying, yes, but explained, yes too.
+So let me go ahead and make meow one more time, ./meow, still working OK.
+And let me make one final enhancement to this meow program here.
+Let me go ahead now and say something like this.
+Let me go ahead and say, all right, wouldn't it
+be nice if my meow function could do something for me some number of times?
+So suppose I want to do this.
+This meow function at the moment is going to meow three times.
+But suppose I want to meow n times, where n is just
+some number provided by the user.
+Well, just like in Scratch, custom functions can take inputs,
+I just presently am saying void.
+But if I change this to int n, thereby telling the compiler,
+hey, meow still doesn't return something,
+but it does take something as input.
+It takes an integer, and I want to call it n.
+So this is another way of declaring a variable
+but a way of declaring a variable that gets handed into,
+as input, the function.
+So now if I tighten up main here, now I can actually do something really cool
+just like in Scratch, which is this.
+If I now look at this code-- let me Zoom in here--
+now my main program is really well-written in the sense
+that it just says what it does, meow three times.
+This works, though, because I defined meow as now taking an input,
+an integer called n, and then using n in my now familiar for loop.
+There's one change.
+You might have caught my one mistake.
+I also have to remind myself up here to make that change too.
+Again, this is one of the only redundancies or copy-paste
+that's sort of reasonable.
+But there, I have now a better version.
+So let me go ahead and rerun this, make meow, ./meow.
+Voila.
+So, again, no change in correctness but now,
+again, we're sort of modularizing our code.
+And, heck, what you could do now-- and this is just a tease about a feature
+down the road--
+those header files we talked about early, those libraries,
+this is the kind of modularization we're talking about.
+We, the staff, wrote a function called get_string, get_int, and so forth,
+we put it in a file called CS50, and we put little breadcrumbs-- specifically,
+these things called prototypes--
+in cs50.h.
+So that when you all, as aspiring programmers, include cs50.h,
+you are sort of secretly telling the compiler at the very top of your code
+what the menu of available functions is.
+Why?
+Because in CS50 is lines like these-- obviously, not for meow,
+but for get_string, get_int, and so forth.
+And stdio.h is the same lines of code for things like printf.
+So that's all that's going on there.
+It's just a way of telling the computer in advance what functions to expect.
+All right, any questions, then, on these here?
+Correct.
+So if you don't mind, I want to continue to wave
+my hand at that detail for today.
+Indeed, int main void is a little weird, because what would the input domain be?
+We have no mechanism for providing input yet.
+And what does it mean for main to return anything?
+Like, who is it returning to?
+For another day, if we may.
+They're going to come into play but that, for now,
+today is just something you should take at face value,
+as necessary copy-paste to begin programs.
+So meow is a function that takes an input, the number of times to meow,
+but it didn't actually have a return value, hence the void.
+But what if we actually want to create our own function that
+not only takes 0 or more inputs as arguments
+but also returns some value, maybe an int, maybe a float, maybe something
+else altogether?
+Well, it turns out, in C, we can do that as well.
+Let me go ahead and create a new file here called discount.
+And let's implement a quick program via which
+we can discount some regular price by some percentage,
+as though there's a sale going on in a store.
+Let me go ahead and include our usual cs50.h followed by stdio.h at the top.
+Let me give myself int main void as before.
+And inside of main, let's go ahead and do something simple.
+Let's give ourselves a float called regular,
+representing the regular price of something in a store.
+Let's go ahead and get a float from the user asking them
+what that regular price is.
+Then, next, let's go ahead and declare a second variable-- also a float--
+called sale, ultimately representing the sale price
+after some percentage discount off.
+And let's go ahead and simply calculate whatever regular is.
+And, say, 15% off is a pretty good discount.
+So let's go ahead and discount regular, whatever it is, by 15%,
+which is equivalent, of course, to multiplying it with the asterisk
+by 0.85.
+Of course, if we're taking off 15%, we multiply the regular price by 0.85.
+Now, let's go ahead and print out the results here.
+Let me go ahead and say printf sale price, colon--
+let me go ahead and %f, but, more specifically,
+%.2f because, at least in US currency we typically show cents to two decimal
+places--
+followed by a newline.
+And then let me go ahead and plug in the value of sale.
+All right, let's go down here and do make discount, Enter.
+So far, so good-- ./discount.
+And the regular price is maybe $100.
+So the sale price should be $85.
+So our arithmetic seems to be correct here.
+But let's fast-forward now in time.
+Suppose that we find ourselves discounting
+a lot of prices in an application, maybe a website
+like Amazon where they're offering some kind of percentage discount.
+And it'd be nice to have a reusable function that
+just does this arithmetic for us, simple though it may be.
+So let's go ahead and modify discount this time
+to give ourselves our own function called discount,
+for instance, that takes an input--
+like the regular price that you want to discount--
+and then it also returns a value.
+It doesn't just print it out.
+It returns a value, namely, a float that represents what the sale price is.
+So let me go down below main and go ahead
+and define a function that's going to return a float,
+because we're dealing with dollar amount still.
+The function is going to be called discount.
+And it's going to take one input, like the price that we want to discount.
+In here, I'm going to do something very simple.
+I'm going to say float sale equals whatever that price is times 0.85.
+And then I'm going to go ahead and return sale.
+Now, for that matter, I can actually tighten this up a bit.
+If I'm only declaring a variable to store a value that I'm then
+returning with this keyword return, I actually don't even need that variable.
+So I can delete the second line.
+And I can actually just go ahead and get rid of that variable
+altogether and immediately return whatever the arithmetic
+result is of taking the price input, the argument that's being passed in,
+times 0.85.
+So very simple function that simply does the discounting for me.
+As always, let me go ahead and copy-paste--
+the only time it's OK to copy-paste-- the prototype of that function, so
+the top of the file, so that when compiling this code,
+main has already seen the word discount before.
+And now let me go into the code here.
+And instead of doing the math myself in main,
+let me presume that we have some function already
+in our toolkit called discount that lets me discount the regular price
+and return that value.
+And then down here, my code doesn't need to change.
+I'm still going to print out sale the variable in which I'm
+storing that result. But notice what I've done here.
+I've sort of abstracted the way the notion
+of taking a discount by creating my own function that takes a float called
+price, or anything else as input.
+It does a little bit of math, simple though it is here,
+and then it returns a value.
+But notice that discount is not printing that value.
+It's literally using this other keyword called
+return so that I can hand back that value, just like get_string hands
+back a value, just like get_int back an integer without printing it
+for you-- so that I up here on line 9 can go ahead and store
+that value in a variable if I want and then actually print it out.
+Let me go ahead now and recompile this code with make discount.
+Let me go ahead and do ./discount.
+And let's, again, do $100.
+Sale price is going to be $85 as well.
+Now, it turns out that functions don't have to take just 0 or 1 argument
+as input.
+They can actually take 2 or 3 or more.
+So, in fact, suppose we wanted to now enhance this version of my program
+and take in as input to the discount function, not just the price
+that I want to discount but also the percentage off,
+thereby allowing us to support not just 15% off but any number of percentage
+points off.
+Well, let me go up here and declare an int, say, and call it percent_off.
+And let me ask the user for how many percentage
+points they want to take off.
+So I'm going to say percent_off inside of the prompt here,
+get that int called percent_off.
+And now in addition to passing in regular as an input
+to the discount function, I'm also going to pass in percent_off.
+But I need to tell the computer that it is taking now two arguments,
+and the way I do this is just with a comma
+down here in the function's own definition.
+Here is going to be a percentage argument, a second argument,
+per the comma.
+And I'm now going to use that percentage in a slightly familiar way.
+I don't want to just do percentage like this, because, of course,
+that's going to increase the size of the total price.
+I actually need to do a little bit of real-world math where if this is
+a percentage off, like the number 15 for 15 percentage points,
+I need to do 100 minus that many percentage points,
+thereby giving me 100 minus 15--
+85.
+And then I need to divide that by 100 in order now
+to give myself 0.85 times the price that was passed in.
+But if I go ahead now and save this, run, make discount one last time,
+I notice that I've actually got an error here.
+What have I done wrong?
+Well, I need to change that prototype too.
+And, again, this is admittedly an annoying aspect of C
+that you have to maintain consistency here.
+But that's fine.
+I'm just going to go up here, change this to int
+percentage-- spelling incorrectly.
+And now let me retry compilation, make discount,
+crossing my fingers this time.
+Worked OK. ./discount, and voila, $100.
+And percent off, say, 15 points.
+And, voila, $85.
+Now, it's worth noting that I've deliberately
+returned the results of my math from this function.
+I haven't just done the math on the original variable that's being passed.
+In fact, if we take a look at this second version
+where discount is now taking a price argument and a percentage argument,
+notice that I'm not doing something like this.
+I'm not just saying price equals price times 100
+minus percentage divided by 100 and leaving at that.
+The problem there is that this variable price is going
+to be scoped to that discount function.
+And we'll encounter this again before long, but this notion of scope
+just refers to where in which a variable actually lives or exists
+or is accessible.
+So it turns out if I change price in the context of this discount
+function, that's not going to have a lasting effect.
+If I actually want to get the result back
+to the function that used the discount function, namely, main,
+I actually do need to take this approach of actually returning
+the value explicitly so that ultimately I'm handing back the discounted price.
+All right.
+Well, let's go ahead and maybe how about let's just
+use these primitives in just a few different ways.
+How about a little game of yesteryear, Super Mario Brothers?
+And in the original Super Mario Brothers and in bunches of variants,
+so you have these side-scrolling worlds that
+look like this where there's some coins in the sky hidden behind these question
+marks.
+So let's just use this as a visual to consider how in C could
+I start to make something semi-graphical.
+Like, not actual colors or fanciness, that feels like too much too soon--
+just something like printing out some question marks.
+Well, if I go back over here, let me create that actual file
+that I alluded to earlier.
+So let me code up mario.c.
+Let me go ahead and include stdio.h, int main void, again,
+which we'll continue to copy-paste for today.
+And then let me just go ahead and do something simple like 1, 2, 3, 4,
+and a newline.
+All right, this is what we might call ASCII art, which
+just means graphics but really just implemented with your keyboard.
+And if I make mario and do ./mario, it's not nearly as engaging visually
+as this, but it's the beginning of this kind of map for a game.
+Well, if I wanted to now print out of those things dynamically,
+let me go back to my code here.
+And instead of printing out for all at once,
+I could do something like four int i gets 0, i less than 4, i plus plus.
+And then inside here, I could just print out one of them at a time.
+Let me save that, make mario.
+And, at the risk of disappointing, so close
+but I made a mistake, just a stupid aesthetic.
+The prompt is not on the new line.
+How could I move it?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, I need an escape character, the backslash n.
+But should I put it here?
+OK, no, because that's going to put it after everyone,
+and it's going to make this thing vertical instead of horizontal.
+So, logically, just like in Scratch, put it at the end of the loop, so something
+out here.
+And just print out, for instance, only, quote unquote, new line.
+And now if I do make mario again, ./mario, OK.
+We're back in business.
+But a little better designed in that now I'm
+not repeating myself multiple times, I'm doing this again and again.
+But let's do one other thing here with mario.
+Let me go ahead and ask the user how many question marks or coins to print.
+The catch here is that there's another type of loop that's helpful for this,
+and it's called a do while loop, generally.
+A do while loop is similar to a while loop,
+but it checks the condition last instead of first.
+Recall earlier on the slide, we had while,
+open parenthesis, closed parenthesis.
+And I kept claiming that we check whether i is less than-- whatever
+it was, 3 in advance again and again.
+A do while loop just inverts the logic so that you can actually
+do something like this.
+At the top of this program, I'm going to go ahead now
+and give myself a variable n like this of type integer.
+And then I'm going to do, literally, the following with the keyword do.
+n equals get_int-- and I'm going to ask the user for the width,
+like the number of dollar signs to print.
+And I'm going to do this while n is less than, say, 1.
+So this is a little cryptic, but the salient differences
+are the Boolean expression is now at the bottom of my block of code,
+not at the top.
+Now, why is this?
+Well, the difference here if I make mario is--
+whoops.
+I need to add cs50.h, because I'm now using get_int.
+If I now compile this version of Mario and do ./mario,
+a do while loop is helpful when you want to do something no matter what first
+and then check some condition or some Boolean expression to see if maybe,
+in this case, the user cooperated.
+It would make no sense if the user typed in, say, 0,
+because there's no work to be done.
+It'd be really weird if they said negative 100,
+because that makes no sense logically.
+So with this simple construct here, I am doing the following
+while n is less than 1.
+The implication is that as soon as n equals 1 or is bigger than 1,
+I'm going to break out of this loop, and I've got myself
+a variable called n containing, essentially, a positive value, 1
+through 2 billion or so.
+And I can now use this, for instance, here, change the 4 to an n
+so now my program is completely dynamic.
+Let me go ahead and do make mario, ./mario again.
+And I'll do 4, still works.
+I'll do 40, still works.
+And the difference here with the do while is if something like this
+involves getting user input, well, there's no question to ask.
+The user hasn't given you anything yet.
+So you have to do something first, then check, and break out of the loop
+if the human has, for instance, cooperated, in this case.
+All right, well why don't we escalate to something
+more like this in the same game, where you're underground as Mario,
+and this is like a two-dimensional wall that's popping up here?
+It looks like a 3 by 3, for instance, for the sake of discussion.
+And it's like, made of bricks, so I'll use maybe hash symbols this time.
+Well, it turns out that we can nest--
+that is, combine-- some of these same ideas as follows.
+Let me go ahead now and change back to this code.
+And I'm going to keep the do while loop from before.
+And I'm going to ask, though, this question,
+what's the size of this square?
+I'm going to assume it's n by n, so 3 by 3, 4 by 4, whatever.
+So I'm just going to ask for the size of this square of bricks.
+And now, how do I do this?
+Well, I'm going to go ahead, for instance, and print out--
+how about for int i = 0, i less than n, i++.
+Let me just keep it simple and print out something
+like this, just a single hash symbol that is a brick,
+and a newline after it.
+All right, let's make mario.
+Run mario of 3.
+OK, that's close to being it.
+I've got a column.
+All right, but I need it to be wider.
+So the solution last time was to get rid of the newline
+and then maybe put the newline here, after the loop.
+All right, so let's do make mario, ./mario, and type in 3 and huh.
+All right, so I kind of need to combine these two ideas somehow.
+So how might we solve this problem?
+I want to print rows and columns, not row or column.
+How do I do this?
+Yeah.
+AUDIENCE: Add another loop in the for loop.
+DAVID J. MALAN: Yeah.
+Add another loop in the for loop, right?
+If you use one loop conceptually to kind of count the rows from top
+to bottom, and then within each row, you then
+sort of typewriter style-- old school typewriter--
+do like, character, character, character, character horizontally,
+I think we could do exactly what we want to achieve here.
+So how about this?
+Let me get rid of this line and get rid of this line for now.
+And let me just give myself another loop on the inside.
+And since I'm already using i, another reasonable convention
+here would be to say something like j.
+So j also gets 0, j is less than n, j++.
+And now, what's going to happen?
+Let me go ahead and print out just one of these things at a time.
+And let me save and let me run this.
+Let me see how close we are.
+Make mario 3.
+OK, three, that's clearly wrong, but I see nine things there on the screen.
+So we're close.
+What's the one fix I need now to move the old school typewriter head
+down to the next row when appropriate?
+What do you think?
+Yeah, I need one of these backslash n's.
+And let me add some comments now to help everyone visualize what I've done.
+For each row, for each column, how about print a brick--
+just to kind of explain the logic?
+And so I add that because now move to next row,
+I could do something like this with a backslash n.
+So here is where the comments, really, my pseudocode
+actually kind of illuminates the situation a bit.
+Let me go ahead and recompile mario, ./mario 3, now we're talking.
+It's not a perfect square, just because these hash symbols
+are a little taller than they are wide, but that's just a font detail here.
+Now I've done something that's quite more akin to something like this.
+All right, so let me pause here and see if there are any questions.
+Again, the code's getting a little more complicated,
+but we're just building more complicated programs like in Scratch,
+with familiar puzzle pieces-- some variables,
+some loops, some conditionals.
+It's all the same as before.
+Yeah.
+Can you multiply strings in C?
+No.
+But ask that same question again in a few weeks when we get to Python,
+and the answer will be yes.
+Other questions.
+Yeah.
+In C, you must specify the return type, the name
+of the function, and the inputs, or arguments,
+to the function in that order.
+And if none of them are applicable, you write the word void.
+So same question as earlier, let me kick that can a week or so,
+and we'll come back to that and we'll see why.
+But for now, just take on faith that you need to do that with main.
+Because main is a little special, similar to the
+when green flag is clicked.
+It too was a little special as well.
+Yeah
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yes.
+If you want to get out of a loop early, you could do this.
+So let me answer this question this way.
+An alternative to a do while loop would be to do something like this.
+How about while true--
+so do the following forever--
+let me go ahead and get an inch from the user for the size of this thing.
+If n is greater than 0--
+that is, a positive integer--
+then go ahead and use a new keyword called break.
+This is identical to what we just did.
+It's just a little longer.
+It's like a couple extra lines, a lot of them are blank.
+And so it's just an alternative.
+But a do while does the same thing but a little tighter--
+if that's in answer to your question.
+All right, so let's now introduce, finally, a sequence of problems
+that I've kind of been brushing under the rug,
+though we did see a little bit of evidence of this earlier
+when we tried to add 2 billion and 2 billion,
+and it overflowed the number of bits in an int, so to speak.
+Let me go ahead and code up a program called calculator again.
+But I'm going to go ahead now and change this to floats.
+So I'm going to change x to a float, and I'm going to use get_float.
+And a float, again, is just a floating point value,
+which is a fancy way of saying a real number with a decimal point in it.
+And down here, I'm going to go ahead and use %f for float.
+And I'm going to go ahead now and do one more thing.
+Instead of addition, I want to do something fancier, like division,
+so divide x by y.
+And I'm going to give myself another third float called z,
+as we did at the beginning of today.
+And I'm going to print out z instead of x and y explicitly.
+So I'm going to go ahead now and do make calculator, ./calculator.
+And let's do something like, oh, 2/3.
+2 divided by 3 is 0.66667.
+So that's what you would rather expect.
+Let me run it again, 1/10.
+All right, so 0.1, and a bunch of zeros.
+That too is what you would rather expect.
+But now let me get a little curious.
+It turns out that in C, you can modify the behavior of these format
+codes a little bit.
+By default, you get 6 or so digits.
+Suppose that you want to get exactly 2 digits.
+You can more succinctly say 0.2 before the f and after the percent.
+This is the kind of thing that's hard to remember, but you Google it,
+and you find that, OK, format code for floats
+uses 0.2 to do two decimal points.
+So let me do make calculator again, ./calculator.
+How about 2/3?
+0.67.
+So it handles the display of significant digits for us here.
+And now let me go ahead and do 1/10 and 0.10.
+So it's adhering to that.
+Well, maybe I really want a lot of precision, right?
+I've got a really powerful computer.
+Let me see 50 numbers after the decimal point.
+That's a lot of significant digits.
+Let me remake the calculator-- whoops, typo.
+Let me remake the calculator, ./mario calculator.
+And how about 2/3 again?
+Well, that's interesting.
+Pretty sure it's supposed to be a 0.6 with a line over it, right?
+In grade school math.
+All right, well, maybe that's just a bug.
+How about 1/10?
+OK, that's really getting funky.
+So what's going on?
+It seems that my program cannot only not do addition very well--
+we eventually hit problems in the billions--
+we can't even do very precise numbers here.
+What's going on?
+Exactly.
+In a nutshell, the computer's approximating the answer
+using that many numbers after the decimal point.
+But the problem fundamentally is actually
+very similar to that integer overflow from before.
+And I'm using that now as a term of art.
+Integers can overflow if you're trying to use more bits than you actually
+have available to you.
+You sort of change them all to ones, and then you're out of bits, so to speak.
+Same thing here, but in the different context of floats--
+if you only have 32 bits-- or, heck, if we
+change to double and only have 64 bits, that's a lot of precision,
+but it's not infinite.
+And, yet, pretty sure there's an infinite number of real numbers.
+In the world, which is to say a computer with finite memory cannot possibly
+represent all possible numbers in the world.
+Because, again, there's not an infinite number
+of permutations of 32 or 64 bits.
+It might be a lot, in the billions or more, but it's still finite.
+And so, indeed, this is the computer's closest approximation
+to what's actually going on there.
+And so this is an example of what we would actually generally call
+floating-point imprecision.
+Floating-point imprecision refers to the inability for computers fundamentally
+to represent all possible real numbers 100%
+precisely, at least by default in languages like C. Thankfully,
+in the world of scientific computing and so forth,
+there are solutions to this problem that just give you more digits.
+But the problem fundamentally is still going to be there.
+So there's a reason I changed x and y to floats.
+Let's see what would happen if we rewound a bit.
+And instead of using floats for x and y, again, you say integer, so int x and y.
+And let's go far back and use get_int as well,
+thereby giving us integers x and y.
+Let's still leave z as a float, because at the end of the day,
+we want to be able to handle fractions or floating-point values.
+But let's go ahead now and print out this value of z
+having changed x and y now to ints.
+make calculator, ./calculator, and let's do, say, 2 for the numerator,
+3 for the denominator.
+And it's not 0.666, and it's not even rounding oddly.
+It's just all zeros this time.
+So why is that?
+Well, it turns out that C, when dividing an integer by an integer,
+is always going to give you back an integer, an int.
+The problem is that floating-point values don't fit in ints.
+Only the integral part to the left of the decimal point does.
+Everything at and beyond the decimal point itself get thrown away,
+known as a feature in C called truncation.
+When dividing an integer by an integer, you get back an integer.
+But if you're trying to then store what's actually a floating point
+result in that integer, C is just going to throw away everything
+at and beyond the decimal point, leaving us with this case,
+in just the 0 from what should have been 0.666666 and so forth.
+So let's see one more example, in fact.
+Let me go back to my terminal here.
+Let me do ./calculator again.
+And let's do 4/3.
+This time, It should be 1.33333 and so forth.
+But let's see, 4 divided by 3, both as integers, this time gives us 1.0000,
+but there too the answer should be 1.333.
+But the floating-point part is getting truncated or thrown away,
+leaving us with just 1.
+So how do we solve this?
+Well, certainly, we could just use floats from the get-go, as I did.
+But if, by nature of your program, you only have access to integers--
+or maybe even longs, for which the same problem would occur--
+what we can actually do is called type conversion.
+And we can explicitly tell the computer that we actually
+want to treat this int as though it's a floating-point value.
+And we can do that for both x and y.
+So let me go back to my code here, and I have a couple of options, in fact.
+I can convert y to a float by doing this, I can cast y to a float
+by literally writing the type float inside of parentheses
+right before the y.
+And if I really want to be explicit, I can also do the same to x.
+But, strictly speaking, it suffices to just change one or the other,
+not necessarily both.
+Let me go ahead now and do make calculator again, ./calculator,
+and let's try 2 divided by 3.
+And now, we're back to an answer that's closer to correct.
+But, indeed, we're still having some rounding issues there.
+Let's run it one more time for 4 divided by 3.
+There too we're closer to the right answer, at least.
+But we still have that floating-point imprecision,
+but that's going to be another problem altogether to solve.
+And here in a little more detail is that issue
+of integer overflow, which is in the context of ints.
+Suppose that we think back to last week when we had three bits,
+and we counted from 0 to 7, 0, 1, 2, 3, 4, 5, 6, 7.
+I think I asked the question, how would we count to 8?
+Someone proposed, well, we need a fourth bit.
+That's fine if you have a fourth bit, if you have access
+to another light bulb or transistor.
+If you don't, though, the next number after this is technically 1000.
+But if you don't have space for or hardware for that fourth bit,
+you might as well just be representing the number 0.
+So in the world of integers, if you're only using three bits,
+those three bits eventually overflow when you count past 7.
+Because what should be 8 can't fit, so to speak, so it rolls back over to 0.
+And as arcane as this problem might seem,
+we humans have done this a couple of times.
+You might recall knowing about or reading
+about the Y2K problem, where a lot of people
+thought the world was going to end.
+Why?
+Because on January 1st of 2000, a lot of computers,
+presumably, were going to update their clocks from 1999 to the year 2000.
+The problem is, though, for decades, for efficiency, we humans
+were honestly in the habit of not storing years as four digits.
+Why?
+Because that's just a lot of space to waste, especially since centuries
+don't happen that often.
+So a lot of computer systems, especially early on when
+hardware was very expensive and memory was very tight,
+just stored the last two digits of any year.
+The problem, of course, on January 1st of 2000 is that 99 rolls over to 100.
+But if you don't have room for another digit it's just 00.
+And if your code assumes a prefix of 19, well, we just went from the year
+1999 back to the year 1900.
+Thankfully, long story short, a lot of people wrote a lot of code
+in a lot of old languages and mostly warded off this problem,
+so the world did not end.
+The next time the world might end though, is on January 19, 2038.
+Now, that might feel like a long time away,
+but so did the year 2000, at one point.
+Why might clocks again break in today's modern computers in 2038,
+might you think?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Indeed.
+So this refers to some number of seconds.
+So it turns out that the way computers generally keep track of time
+is they count the total number of seconds since the epoch, which
+is defined as January 1, 1970.
+Why?
+It was just a good year to start counting at,
+when computers really came onto the scene.
+Unfortunately, most computers used 32 bits to count the number of seconds
+since January 1, 1970, the implication of which is we
+can only count up to roughly 2 billion seconds.
+2 billion seconds is going to happen in 2038, at which 30 11's
+are going to roll over as follows.
+That number 2 billion, which is the max--
+because if you're representing positive and negative numbers,
+recall that you can only count as high as positive 2 billion
+or negative 2 billion--
+looks like this.
+This is roughly the number 2 billion in binary.
+It's all ones with one zero way over here.
+If I count one second past that 2 billion number, give or take--
+that means, all right, I add 1, I carry the 1--
+it's just like 9's becoming 0's in decimal.
+If I keep this sort of simple animation and I keep carrying the 1,
+carrying the 1, carrying the 1, 1 second after 2 billion seconds, give or take,
+I have this number in the computer's memory.
+So there's still 1 bit that's a 1 all the way to the left.
+Unfortunately, that bit often represents negativity,
+whereby if that first bit is negative, that represents that the rest of it
+somehow represents a negative number.
+It's not negative 0.
+There's a fancier representation.
+But a very big, positive number very suddenly
+becomes a very big, negative number.
+And that number is roughly negative 2 billion.
+That means computers in 2038 on that date
+are going to accidentally think that it's
+been negative 2 billion seconds since January 1, 1970, which is going to make
+computers potentially think it's 1901.
+So what is the solution to the 2038 problem, perhaps?
+Y2K was because we were using two digits for years.
+What about 2038?
+More bits.
+And, thankfully, we're getting a little better at lessons learned here,
+and computers now are increasingly using 64 bits.
+And all of us will be long gone by the time we run out
+of that number of seconds, so it's someone else's problem
+many, many years from now.
+But that's really the fundamental solution.
+If you're running up against something finite, well,
+just kick the can further and just give yourself more bits.
+And, frankly, because hardware is so much cheaper these days,
+computers are so much faster, it's not as big of a deal
+as it might have been decades ago.
+But that's indeed the solution.
+But this arises in very common contexts.
+In fact, let me go ahead and write a real quick program here called pennies.
+You might think that just converting dollars to pennies in US currency
+might be simple, but let me go ahead and do this.
+In pennies.c, I'm going to go ahead and include cs50.h.
+And I'm going to include stdio.h, int main void as my starting point.
+And now down here, I'm going to do this.
+I'm going to get a float called amount, and I'm
+going to ask the user for some amount of dollars, so a dollar amount,
+and I'm going to store that in a variable called amount.
+Then I'm going to simply convert that amount to pennies by doing, say, how
+about amount times 100?
+And then I'm going to go ahead and print out that the number of pennies is %i--
+because that's just an integer in pennies--
+backslash n, quote unquote, comma, pennies.
+All right, so if I didn't make any mistakes here, let me make pennies,
+./pennies.
+And suppose I have, say, $0.99, so 0.99.
+That's 99 pennies.
+Suppose I have $1.23.
+That's pretty good.
+Suppose I have $4.20.
+Huh.
+There's that imprecision issue.
+And this isn't even that big of an amount.
+Now, not a big deal if the cashier gives you one penny less than you're owed,
+but you can imagine this adding up.
+You can imagine this being worrisome for financial implications,
+for financial transactions, for scientific measurements and the like.
+My program can't even handle this.
+Well, there are some solutions here.
+And it looks like what's really happening--
+if I print it out using the %f with a 0.50 or whatever to see more decimal
+points--
+presumably, the computer is struggling to represent $4.20 precisely.
+It's probably storing 4 dollars and 19.9999-something cents.
+So it's close, but it's not quite there.
+So I could at least solve this by rounding up, for instance.
+And it turns out there is a round function out there.
+And it turns out that it's in a library called the math library.
+And you would know this by looking at online documentation and the like,
+as we'll point you to.
+And if I now make pennies again and do ./pennies, I can now do $4.20.
+And, voila.
+Now it's correct.
+So at least in this context, it seems like a solvable problem.
+But it's certainly something I need to be mindful of, nonetheless.
+Unfortunately, even professional, full-time programmers over the years
+have not been particularly attentive to these kinds of details.
+And in a class like this, the goal is not just to teach you programming
+but to really teach you what's going on underneath the hood, so to speak,
+so that you have a bottom-up understanding of how data
+is represented, how computers are manipulating it,
+so that you are not on the failing end of some program having some bug.
+And so that we as a society are not beholden to those kinds of mistakes
+too.
+And this happens, unfortunately, all of the time.
+This is a Boeing airplane that a few years ago needed
+to be rebooted after every 248 days.
+Why?
+Because this Boeing airplane software was using a 32-bit integer counting up
+tenths of a second to keep track of something or other
+related to its electrical power.
+And, unfortunately, after 248 days of the airplane being continuously on--
+which in the airline industry is apparently not
+uncommon to make every dollar count, keeping the planes up and running
+all the time--
+the 32-bit number would roll over and the power
+would shut off on the airplane as a side effect because of sort
+of undefined behavior in that case.
+The temporary solution by Boeing at the time was apparently, essentially,
+sort of operating system style, well, have you rebooted your plane?
+And that was indeed the fix until they rolled out an actual software patch.
+This stuff really matters.
+And the more hardware we carry around and the more we as a society
+use these kinds of devices, the more of these problems
+we're going to run into down the road.
+That's it for CS50.
+We'll see you next time.
+[MUSIC PLAYING]

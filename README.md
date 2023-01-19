@@ -1,6 +1,6 @@
 # Harvard CS50x — 2023
 
-![Harvard University](./Week%200/assets/Harvard-University-Logo.svg)
+![Harvard University](https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/banners/banner-harvard-university.svg)
 
 ## Table of Contents
 
@@ -25,35 +25,47 @@
 ## About
 
 - This repository contains my solutions to the Harvard CS50x course.
-- The course is taught by [David J. Malan](https://github.com/dmalan) and is
-  available on
+- The course is taught by [David J. Malan](https://github.com/dmalan)
+  and is available on
   [edX](https://www.edx.org/course/cs50s-introduction-to-computer-science).
 - My solutions are available under the [GPL-3.0 license](./LICENSE).
 
 ## CS50’s Introduction to Computer Science
 
-This course teaches students how to think algorithmically and solve problems
-efficiently. Topics include abstraction, algorithms, data structures,
-encapsulation, resource management, security, software engineering, and web
-programming. Languages include C, Python, and SQL plus HTML, CSS, and
-JavaScript. Problem sets inspired by the arts, humanities, social sciences, and
-sciences.
+This course teaches students how to think algorithmically and solve
+problems efficiently. Topics include abstraction, algorithms, data
+structures, encapsulation, resource management, security, software
+engineering, and web programming. Languages include C, Python, and SQL
+plus HTML, CSS, and JavaScript. Problem sets inspired by the arts,
+humanities, social sciences, and sciences.
 
 ## Course Syllabus
 
-### Week 0 Scratch
+### Week 0 - Scratch
 
-Scratch is a free programming language and online community where you can create
-your own interactive stories, games, and animations.
+Scratch is a free programming language and online community where you
+can create your own interactive stories, games, and animations.
 
-For Week 0, I have created a game called "Die Hard with a Scratch" which is
-based on the Die Hard film series and based on the ubiquitous character of Hans
-Gruber. It is a single player game where the player controls the character of
-Hans Gruber and must avoid projectiles thrown by the character of Mrs. McClane.
+For Week 0, I have created a game called "Die Hard with a Scratch"
+which is based on the Die Hard film series and based on the ubiquitous
+character of Hans Gruber. It is a single player game where the player
+controls the character of Hans Gruber and must avoid projectiles thrown
+by the character of Mrs. McClane.
 
-- [Learn more ›](Week%200/Readme.md)
+- [Learn more ›](week-0/Readme.md)
 
-### Week 1 C
+### Week 1 - C
+
+For Week 1, I have created the following programs:
+
+- Lab 1: Population Growth:
+  Determines how long it takes for a population to reach a particular
+  size (based on user input). <https://cs50.harvard.edu/x/2023/labs/1/>
+- Problem Set 1: Mario:
+  Prints a half-pyramid of a specified height (based on user input).
+  <https://cs50.harvard.edu/x/2023/psets/1/mario/more/>
+
+[**Learn more** ❯❯](week-1/Readme.md)
 
 ### Week 2 Arrays
 

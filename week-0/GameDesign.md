@@ -1,6 +1,6 @@
 # CS50x - Week 0 Scratch
 
-![Harvard University](assets/Harvard-University-Logo.svg)
+![Harvard University](https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/banners/banner-harvard-university.svg)
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ### Die Hard with a Scratch
 
-![Die Hard with a Scratch](assets/DieHardWithAScracth.svg)
+![Die Hard with a Scratch](https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/cs50x/DieHardWithAScracth.svg)
 
 - Play the game at [https://scratch.mit.edu/projects/773380385][3]
 - Project file
@@ -34,7 +34,7 @@ of Mrs. McClane.
 The game is a remembrance of the classic game of "[Super Dodge Ball][2]". An
 action game that was released by Technos Japan in 1987.
 
-[![Super Dodge Ball](./assets/SuperDodgeBall.svg)][2]
+[![Super Dodge Ball](https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/cs50x/SuperDodgeBall.svg)][2]
 
 #### Concept
 
@@ -85,8 +85,8 @@ A list of characters in the game.
 
 | Character | Name | Description |
 |---|---|---|
-| ![Hans Gruber](./assets/HansGruber.svg) | Hans Gruber  | A cunning thief and criminal mastermind from Germany who holds the Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.  |
-| ![Holly McClane](./assets/HollyMcClane.svg) | Holly Gennero (Holly McClane) | A former police officer and the ex-wife of John McClane. |
+| ![Hans Gruber](https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/cs50x/HansGruber.svg) | Hans Gruber  | A cunning thief and criminal mastermind from Germany who holds the Nakatomi Plaza hostage to steal $640 million in negotiable bearer bonds.  |
+| ![Holly McClane](https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/cs50x/HollyMcClane.svg) | Holly Gennero (Holly McClane) | A former police officer and the ex-wife of John McClane. |
 
 #### Unique Selling Points
 
